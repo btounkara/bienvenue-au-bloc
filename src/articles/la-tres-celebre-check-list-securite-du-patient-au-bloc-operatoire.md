@@ -3,7 +3,8 @@ title: La très célèbre check-list « SÉCURITÉ DU PATIENT AU BLOC OPÉRATOIR
 date: 2026-10-02
 categorie: Sécurité
 resume: Découvrez ce super outils de gestion des risques.
-brouillon: true
+image: /images/articles/la check list.png
+brouillon: false
 ---
 # La check-list au bloc opératoire : vérifier ensemble pour sécuriser le patient
 
