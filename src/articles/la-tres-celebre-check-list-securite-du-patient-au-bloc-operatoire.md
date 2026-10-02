@@ -31,15 +31,15 @@ L’équipe vérifie notamment :
 - l’installation prévue du patient est précisé entre l'équipe d'anesthésie et de chirurgie afin que tout soit  prévu et mise en place au moment de l'installation définitive (appuis, coté du brassard à tension et de la perfusion etc... ;
 - la préparation cutanée : une détersion du site opératoire est-elle nécessaire? quels type d'antiseptique allons nous utiliser en rapport avec les protocoles rédigés dans l'établissement? ;
 - la disponibilité et le bon fonctionnement du matériel chirurgical et anesthésique ;
-- les risques particuliers : allergie, difficulté d’intubation ou de ventilation, risque d’inhalation ou encore risque de saignement important.
+- les risques particuliers : allergie, difficulté d’intubation ou de ventilation, risque d’inhalation ou encore risque de saignement important en rapport avec le patient lui-même et l'intervention prévue.
 
-Lorsque cela est possible, le patient participe lui-même à la vérification de son identité, de l’intervention et du site opératoire.
+Si le patient est en incapacité de répondre aux questions, on procède à une vérifications croisées des éléments: bracelet d'identité, dossier papier, dossier informatique, demande d'intervention, imageries etc...
 
 Ce premier temps permet donc de s'assurer que **le bon patient va bénéficier de la bonne intervention, au bon endroit, dans de bonnes conditions de sécurité**.
 
 ### 2. Avant l’incision : le « time-out »
 
-Juste avant le début de l'intervention, l'équipe réalise une nouvelle pause : le **time-out**.
+Juste avant le début de l'intervention qui est en majeur partie du temps marqué par l'incision, l'équipe réalise une nouvelle pause : le **time-out**.
 
 Cette vérification doit être réalisée en présence des différents professionnels concernés : chirurgien, anesthésiste, IADE, IBODE ou IDE.
 
@@ -49,19 +49,17 @@ L’équipe confirme une dernière fois :
 - l’intervention prévue ;
 - le site opératoire ;
 - l’installation du patient ;
-- la disponibilité des documents nécessaires, notamment l’imagerie.
+- la disponibilité des documents nécessaires, notamment l’imagerie;
+- les risques liés à la chirurgie ou à l'anesthésie
+- l’antibioprophylaxie, lorsqu’elle est indiquée, ainsi que la préparation du champ opératoire sont également vérifiées.
 
-Mais le time-out ne s'arrête pas à ces vérifications.
+En pratique ca donne: "Nous opérons Mme X Cristelle née le 12/05/1985 d'une prothèse totale de hanche coté gauche, la patiente est en décubitus dorsal sur table orthopédique vérifié avant la mise en place des champs. Nous disposons des ancillaires complets, des implants prévus et des imageries et bilans sanguins apportés par la patiente. L'antibioprophylaxie a t-elle été réalisée? (Confirmation de la part de la personne qui l'a réalisé). Existe t-il un risque particulier concernant la chirurgie ou la patiente? (Réponse de l'équipe d'anesthésie et/ou du chirurgien".
 
-C'est également un véritable **temps d'échange entre les professionnels**.
+**J'ajouterais une dernière vérification à cette check-list "Est ce que les textiles ont bien étés comptés svp?" ce à quoi l'aide opératoire ou l'instrumentiste répondra en donnant les comptes qu'elle/il a établit.** 
 
-Les équipes chirurgicale, anesthésique et infirmière partagent les informations importantes et anticipent les difficultés potentielles : temps opératoire délicat, risque hémorragique, matériel ou implants spécifiques, particularités anesthésiques ou encore problème identifié avec un dispositif médical.
+À l'issue de cette étape, l'équipe pourra prendre deux décisions :
 
-L’antibioprophylaxie, lorsqu’elle est indiquée, ainsi que la préparation du champ opératoire sont également vérifiées.
-
-À l'issue de cette étape, l'équipe peut prendre une décision :
-
-**GO : les conditions sont réunies pour réaliser l'incision.**
+**GO : les conditions sont réunies pour réaliser l'incision. La circulante donne donc la lame pour permettre au chirurgien de commencer l'intervention**
 
 **NO GO : l'incision ne doit pas être réalisée tant que le problème identifié n'est pas résolu.**
 
@@ -73,29 +71,19 @@ L’équipe confirme oralement :
 
 - l’intervention réalisée et enregistrée ;
 - le compte final des compresses, aiguilles et instruments ;
-- l’identification correcte des prélèvements et pièces opératoires ;
-- la survenue éventuelle d'un événement indésirable et son signalement ;
+- l’identification correcte des prélèvements et pièces opératoires (ainsi que leur bon conditionnement) ;
+- la survenue éventuelle d'un événement indésirable et son signalement (réalisation d'une déclaration d'évènement indésirable selon la procédure interne de l'établissement) ;
 - les prescriptions et modalités de surveillance postopératoire.
-
-Cette dernière pause permet notamment de sécuriser la transmission des informations nécessaires à la prise en charge postopératoire du patient.
 
 ## Qui remplit la check-list ?
 
-Un **coordonnateur de la check-list** s'assure que les différents items ont bien été vérifiés.
-
-Mais il ne réalise pas la check-list seul.
+Un **coordonnateur de la check-list** s'assure que les différents items ont bien été vérifiés. Il s'agit le plus souvent de l'IDE circulant **mais il ne réalise pas la check-list seul.**
 
 Chaque professionnel participe aux vérifications qui relèvent de son domaine et les informations doivent être **partagées oralement avec les membres de l'équipe concernés**.
 
-Une check-list remplie sans échange entre les professionnels perd donc une grande partie de son intérêt.
+Qui doit obligatoirement participer à la check-list? La HAS précise dans sa FAQ que l'équipe "Idéalement, l’ensemble de l’équipe (chirurgien, anesthésiste, IBODE…) doit être présent à chaque étape clé de la check-list, notamment lors du "time out", afin de garantir une vérification partagée des points de sécurité.
 
-## Et en cas de problème ?
-
-Certaines réponses de la check-list nécessitent une **concertation de l'équipe et une décision motivée**.
-
-L'objectif n'est pas de poursuivre l'intervention à tout prix, mais de permettre à l'équipe de s'arrêter lorsqu'une condition de sécurité n'est pas remplie.
-
-C'est tout l'intérêt du **NO GO** : identifier le problème, échanger en équipe et décider de la conduite à tenir avant de poursuivre.
+Cependant, en pratique, certaines étapes peuvent être **déléguées à l’équipe paramédicale**, à condition que cette délégation soit précisément encadrée par un protocole validé de manière collégiale (chirurgiens, anesthésistes, IBODE, conseil de bloc, etc.). Une telle organisation représente alors une modalité dégradée, qui doit faire l’objet d’un suivi, incluant une évaluation de sa mise en œuvre et des audits réguliers."
 
 ## À retenir
 
@@ -105,10 +93,12 @@ Elle permet de vérifier les informations essentielles à trois moments clés :
 
 **Avant l'anesthésie → Avant l'incision → Avant la sortie de salle.**
 
-Son efficacité dépend cependant de la manière dont elle est utilisée : elle doit être réalisée collectivement, oralement et avec la participation active des différents professionnels.
+Son efficacité dépend cependant de la manière dont elle est utilisée : elle doit être réalisée **collectivement**, **oralement** et avec la participation active des différents professionnels.
 
-Quelques minutes de vérification et de communication peuvent permettre d'éviter des erreurs aux conséquences potentiellement importantes.
+++Quelques minutes de vérification et de communication peuvent permettre d'éviter des erreurs aux conséquences potentiellement importantes++.
 
 ### Source
 
 Haute Autorité de Santé (HAS) – *Check-list « Sécurité du patient au bloc opératoire » – Version générique 2018, « Vérifier ensemble pour décider »*.
+
+Site de la FAQ HAS: [https://www.has-sante.fr/jcms/p_3419409/fr/bien-utiliser-la-check-list-faq](https://www.has-sante.fr/jcms/p_3419409/fr/bien-utiliser-la-check-list-faq) 
