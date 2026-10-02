@@ -13,7 +13,7 @@ Proposée par la Haute Autorité de Santé (HAS), elle permet à l’ensemble de
 
 ## Pourquoi une check-list au bloc opératoire ?
 
-La check-list n’est pas simplement une succession de cases à cocher. J'insiste sur ce point : il ne faut pas la voir comme une contrainte de plus qui vient augmenter notre charge de travail. C'est un guide de route qui permet de garantir le bon déroulement de la chirurgie. On ne coche donc pas toutes les cases en début d'intervention en se disant "Ca c'est fait".
+La check-list n’est pas simplement une succession de cases à cocher. J'insiste sur ce point : il ne faut pas la voir comme une contrainte de plus qui vient augmenter notre charge de travail. C'est un guide de route qui permet de garantir le bon déroulement de la chirurgie. On ne coche donc pas toutes les cases en début d'intervention en se disant : « Ça, c'est fait. »
 
 Elle est composée de 3 grands temps qui seront communs à toutes les interventions :
 
@@ -33,6 +33,8 @@ L’équipe vérifie notamment :
 
 Si le patient est dans l'incapacité de répondre aux questions, on procède à une vérification croisée des éléments : bracelet d'identification, dossier papier, dossier informatique, demande d'intervention, imageries, etc.
 
+Si le patient est mineur : l'équipe réalise la 1re partie de la check-list en présence de son parent accompagnant. On vérifiera également la présence de l'autorisation d'opérer signée des deux parents et des documents demandés par l'établissement.
+
 Ce premier temps permet donc de s'assurer que **le bon patient va bénéficier de la bonne intervention, au bon endroit, dans de bonnes conditions de sécurité**.
 
 ### 2. Avant l’incision : le « time-out »
@@ -45,7 +47,7 @@ L’équipe confirme une dernière fois :
 
 - l’identité du patient ;
 - l’intervention prévue ;
-- le site opératoire (incluant le coté à opérer) ;
+- le site opératoire (incluant le côté à opérer) ;
 - l’installation du patient ;
 - la disponibilité des documents nécessaires, notamment l’imagerie ;
 - les risques liés à la chirurgie ou à l'anesthésie ;
@@ -53,9 +55,9 @@ L’équipe confirme une dernière fois :
 
 En pratique, ça donne :
 
-« Nous opérons Mme X, Christelle, née le 12/05/1985, d'une prothèse totale de hanche côté gauche. La patiente est en décubitus dorsal sur table orthopédique, sa position à été vérifié avant la mise en place des champs opératoires. Nous disposons des ancillaires complets, des implants prévus, des imageries et des bilans sanguins apportés par la patiente. L'antibioprophylaxie a-t-elle été réalisée ? (Confirmation de la part de la personne qui l'a réalisée.) Existe-t-il un risque particulier concernant la chirurgie ou la patiente ? (Réponse de l'équipe d'anesthésie et/ou du chirurgien.) »
+« Nous opérons Mme X, Christelle, née le 12/05/1985, d'une prothèse totale de hanche côté gauche. La patiente est en décubitus dorsal sur table orthopédique, sa position a été vérifiée avant la mise en place des champs opératoires. Nous disposons des ancillaires complets, des implants prévus, des imageries et des bilans sanguins apportés par la patiente. L'antibioprophylaxie a-t-elle été réalisée ? (Confirmation de la part de la personne qui l'a réalisée.) Existe-t-il un risque particulier concernant la chirurgie ou la patiente ? (Réponse de l'équipe d'anesthésie et/ou du chirurgien.) »
 
-**J'ajouterais une dernière vérification à cette check-list : « Est-ce que les textiles ont bien été comptés, s'il vous plaît ? »**, ce à quoi l'aide opératoire ou l'instrumentiste répondra en donnant les comptes qu'elle/il a établis**.**
+**J'ajouterais une dernière vérification à cette check-list : « Est-ce que les textiles ont bien été comptés, s'il vous plaît ? »**, ce à quoi l'aide opératoire ou l'instrumentiste répondra en donnant les comptes qu'elle/il a établis.
 
 À l'issue de cette étape, l'équipe pourra prendre deux décisions :
 
@@ -87,6 +89,10 @@ Qui doit obligatoirement participer à la check-list ? La HAS précise dans sa F
 
 Cependant, en pratique, certaines étapes peuvent être **déléguées à l’équipe paramédicale**, à condition que cette délégation soit précisément encadrée par un protocole validé de manière collégiale (chirurgiens, anesthésistes, IBODE, conseil de bloc, etc.). Une telle organisation représente alors une modalité dégradée, qui doit faire l’objet d’un suivi, incluant une évaluation de sa mise en œuvre et des audits réguliers. »
 
+## Bon à savoir
+
+Il existe des check-lists spécialisées pour certaines disciplines : « Sécurité du patient en chirurgie urologique », « Sécurité césarienne », « Sécurité du patient en radiologie interventionnelle », « Chirurgie maxillo-faciale et stomatologie », etc. Un établissement peut également décider de créer sa propre check-list personnalisée. Un modèle est disponible sur le site de la HAS.
+
 ## À retenir
 
 La check-list du bloc opératoire est avant tout un **outil de communication et de sécurité collective**.
@@ -97,11 +103,10 @@ Elle permet de vérifier les informations essentielles à trois moments clés :
 
 Son efficacité dépend cependant de la manière dont elle est utilisée : elle doit être réalisée **collectivement**, **oralement** et avec la **participation active** des différents professionnels.
 
-++Quelques minutes de vérification et de communication peuvent permettre d'éviter des erreurs aux conséquences potentiellement importantes.++
+Quelques minutes de vérification et de communication peuvent permettre d'éviter des erreurs aux conséquences potentiellement importantes.
 
 ### Sources
 
 Haute Autorité de Santé (HAS) – *Check-list « Sécurité du patient au bloc opératoire » – Version générique 2018, « Vérifier ensemble pour décider »*.
 
 FAQ de la Haute Autorité de Santé : [https://www.has-sante.fr/jcms/p_3419409/fr/bien-utiliser-la-check-list-faq](https://www.has-sante.fr/jcms/p_3419409/fr/bien-utiliser-la-check-list-faq)
-
