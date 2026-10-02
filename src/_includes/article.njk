@@ -10,10 +10,10 @@
       <h1>{{ title }}</h1>
       <p class="infos">Par {{ site.signature }} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time> · {{ content | dureeLecture }} min de lecture</p>
     </header>
-    {% if image %}
-    <figure class="couverture"><img src="{{ image }}" alt=""></figure>
-    {% endif %}
     <div class="texte">
+      {% if image %}
+      <figure class="couverture"><img src="{{ image }}" alt=""></figure>
+      {% endif %}
       {{ content | safe }}
     </div>
 
