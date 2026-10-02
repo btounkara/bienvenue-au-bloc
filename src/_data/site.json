@@ -1,0 +1,14 @@
+{
+  "nom": "BienvenueAuBloc",
+  "slogan": "Le bloc opératoire expliqué simplement",
+  "description": "Des articles courts et clairs pour les IDE débutants au bloc opératoire, les étudiants et les jeunes diplômés, écrits par une IBODE.",
+  "banniere": "/images/banniere.jpg",
+  "accroche_titre": "Vos premiers pas *au bloc*, expliqués simplement.",
+  "accroche_texte": "Des articles courts et clairs pour les IDE débutants au bloc, les étudiants et les jeunes diplômés. Asepsie, instruments, installation du patient : les bases, une à une.",
+  "accroche_signature": "Écrit par une IBODE, pour les collègues",
+  "presentation_titre": "Qui suis-je ?",
+  "portrait": "/images/portrait.webp",
+  "presentation": "<p>Je suis une IBODE (Infirmière de Bloc Opératoire Diplômée d'État) passionnée par ce que je fais et toujours à la recherche de nouvelles connaissances. J'adore former et transmettre aux collègues tout ce que je peux.</p><p>J'ai décidé de me lancer dans l'écriture de ce blog il y a peu pour mélanger mon envie d'écriture et de transmission.</p><p>Ce blog est destiné à tous ceux qui voudront le lire, mais il a été pensé pour les collègues IDE débutants au bloc, étudiants, jeunes diplômés… Il a pour but de transmettre des concepts de base de manière simple et légère. En espérant que vous trouverez ce que vous cherchez.</p><p>Bonne lecture,<br><strong>MTNK</strong></p>",
+  "signature": "MTNK",
+  "avertissement": "Ces articles ont un but pédagogique et ne remplacent pas les protocoles de votre établissement."
+}

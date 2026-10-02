@@ -1,0 +1,383 @@
+<title>Bienvenue au Bloc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap">
+<style>
+/* Mise en page Quadrat : bandeau marine avec grand triangle, grille de cartes illustrées, article en colonne étroite.
+   Thème unique et assumé (celui du blog WordPress actuel). */
+:root {
+  --marine: #292C6D;       /* fond principal (couleur WordPress actuelle) */
+  --nuit: #151853;         /* cartes, triangle, pied de page */
+  --rose: #FFD1D1;         /* texte et titres */
+  --corail: #E07A84;       /* accent tiré de la bannière "AuBloc" */
+  --creme: #FBF7F4;        /* fond des illustrations */
+  --rose-doux: rgba(255, 209, 209, .72);
+  --trait: rgba(255, 209, 209, .22);
+  --police: "DM Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  --mesure: 40rem;
+  --large: 72rem;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--marine); color: var(--rose);
+  font-family: var(--police); font-size: 1.0625rem; line-height: 1.65;
+  overflow-x: hidden;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--corail); outline-offset: 3px; border-radius: 4px; }
+.enveloppe { max-width: var(--large); margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); }
+
+/* Bandeau d'avertissement maquette */
+.maquette {
+  background: var(--corail); color: var(--nuit); text-align: center;
+  font-size: .875rem; font-weight: 500; padding: .5rem 16px;
+}
+
+/* En-tête */
+.entete { position: relative; isolation: isolate; overflow: hidden; }
+.entete::before {
+  content: ""; position: absolute; z-index: -1; inset: 0;
+  background: var(--nuit);
+  clip-path: polygon(38% 0, 100% 0, 100% 62%, 58% 100%);
+  opacity: .85;
+}
+.barre { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; padding-block: 1.5rem; }
+.logo { display: flex; align-items: center; gap: .75rem; text-decoration: none; }
+.logo strong { font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; }
+.logo span { font-size: .875rem; color: var(--rose-doux); }
+.menu { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; list-style: none; margin: 0; padding: 0; }
+.menu button { all: unset; cursor: pointer; font-size: .95rem; }
+.menu button:hover, .menu button[aria-current="true"] { text-decoration: underline; text-underline-offset: 6px; }
+
+.accroche { display: grid; max-width: 60rem; margin-inline: auto; gap: clamp(2rem, 4vw, 3rem); padding-block: clamp(1rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2.5rem); }
+.accroche > * { min-width: 0; }
+.accroche-texte { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem clamp(2rem, 5vw, 4rem); align-items: end; }
+.accroche-texte > * { min-width: 0; }
+.accroche h1 {
+  margin: 0; font-size: clamp(2rem, 4.4vw, 3.4rem); line-height: 1.08; font-weight: 500;
+  letter-spacing: -.02em; text-wrap: balance;
+}
+.accroche-texte p { margin-top: 0; }
+.accroche h1 em { font-style: normal; color: var(--corail); }
+.accroche p { margin: 1.25rem 0 0; max-width: 32rem; color: var(--rose-doux); }
+.etiquette { display: inline-block; margin-top: 1.5rem; font-size: .8rem; letter-spacing: .06em; }
+.banniere { margin: 0; border-radius: 6px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); }
+.banniere img { display: block; width: 100%; height: auto; }
+
+/* Sections */
+section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+#articles { padding-top: clamp(1rem, 2vw, 1.5rem); }
+.titre-section { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+.titre-section h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 500; letter-spacing: -.01em; }
+.titre-section p { margin: 0; font-size: .9rem; color: var(--rose-doux); }
+
+/* Recherche */
+.recherche { display: grid; gap: .5rem; max-width: 34rem; margin-bottom: 1.25rem; }
+.recherche label { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--rose-doux); }
+.champ { position: relative; }
+.champ svg { position: absolute; left: 1rem; top: 50%; translate: 0 -50%; width: 1.2rem; height: 1.2rem; fill: none; stroke: var(--rose); stroke-width: 2; stroke-linecap: round; pointer-events: none; }
+.champ input {
+  width: 100%; font: inherit; font-size: 1rem; color: var(--rose);
+  background: var(--nuit); border: 1px solid var(--trait); border-radius: 999px;
+  padding: .75rem 1.2rem .75rem 2.9rem;
+}
+.champ input::placeholder { color: var(--rose-doux); opacity: .7; }
+.champ input:focus { outline: none; border-color: var(--corail); box-shadow: 0 0 0 3px rgba(224, 122, 132, .3); }
+
+/* Filtres par thème */
+.themes { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
+.themes button {
+  font: inherit; font-size: .9rem; cursor: pointer; color: var(--rose);
+  background: transparent; border: 1px solid var(--trait); border-radius: 999px; padding: .35rem 1rem;
+}
+.themes button:hover { border-color: var(--rose); }
+.themes button[aria-pressed="true"] { background: var(--rose); color: var(--nuit); border-color: var(--rose); }
+
+/* Cartes d'articles */
+.grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); gap: 1.75rem; }
+.carte { background: var(--nuit); display: flex; flex-direction: column; text-align: left; }
+.carte > a { text-decoration: none; display: flex; flex-direction: column; height: 100%; }
+.carte .illus { aspect-ratio: 16 / 10; max-width: 100%; background: var(--creme); display: grid; place-items: center; }
+.carte .illus svg { width: 42%; height: auto; }
+.carte .corps { padding: 1.5rem 1.6rem 1.8rem; display: grid; gap: .7rem; }
+.carte .meta { font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; color: var(--corail); }
+.carte h3 { margin: 0; font-size: 1.45rem; line-height: 1.2; font-weight: 500; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; text-wrap: balance; }
+.carte p { margin: 0; font-size: .95rem; color: var(--rose-doux); }
+.carte .duree { font-size: .8rem; color: var(--rose-doux); }
+.carte > a:hover h3 { color: var(--corail); }
+.carte.une { grid-column: 1 / -1; }
+.carte.une > a { display: grid; grid-template-columns: 1fr 1fr; }
+.carte.une .illus { aspect-ratio: auto; min-height: 16rem; }
+.carte.une h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+.vide { color: var(--rose-doux); }
+
+/* À propos */
+.apropos { background: var(--nuit); }
+.apropos .enveloppe { display: grid; grid-template-columns: minmax(0, 26rem) 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.apropos .enveloppe > * { min-width: 0; }
+.portrait { margin: 0; border-radius: 6px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); }
+.portrait img { display: block; width: 100%; height: auto; }
+.apropos p { max-width: var(--mesure); margin: 0 0 1rem; }
+.apropos h2 { margin: 0 0 1rem; font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 500; }
+
+/* Pied de page */
+.pied { padding-block: 2.5rem; font-size: .875rem; color: var(--rose-doux); border-top: 1px solid var(--trait); }
+.pied .enveloppe { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+/* Article */
+.article { padding-block: clamp(2rem, 5vw, 4rem) 4rem; }
+.retour { all: unset; cursor: pointer; font-size: .95rem; display: inline-block; margin-bottom: 2rem; }
+.retour:hover { text-decoration: underline; text-underline-offset: 5px; }
+.article header { max-width: 48rem; }
+.article h1 { margin: .5rem 0 1rem; font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.1; font-weight: 500; letter-spacing: -.02em; text-wrap: balance; }
+.article .meta { font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; color: var(--corail); }
+.article .infos { color: var(--rose-doux); font-size: .95rem; }
+.texte { max-width: var(--mesure); margin-top: 2.5rem; }
+.texte h2 { font-size: 1.5rem; font-weight: 500; margin: 2.5rem 0 .75rem; text-wrap: balance; }
+.texte p, .texte li { color: #FFE7E7; }
+.texte ol { padding-left: 1.4rem; display: grid; gap: .9rem; }
+.texte li::marker { color: var(--corail); font-weight: 700; }
+.encadre { margin: 2.5rem 0; padding: 1.5rem 1.6rem; background: var(--rose); color: var(--nuit); border-radius: 4px; }
+.encadre strong { display: block; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .5rem; }
+.encadre p { margin: 0; color: var(--nuit); }
+.lexique { margin: 2.5rem 0; padding: 1.25rem 0; border-block: 1px solid var(--trait); }
+.lexique dt { font-weight: 700; }
+.lexique dd { margin: 0 0 .75rem; color: var(--rose-doux); }
+.lexique dd:last-child { margin-bottom: 0; }
+.note-exemple { font-size: .875rem; color: var(--rose-doux); font-style: italic; }
+
+@media (max-width: 760px) {
+  .accroche-texte { grid-template-columns: 1fr; }
+  .carte.une > a { display: flex; }
+  .carte.une .illus { min-height: 0; aspect-ratio: 16 / 10; }
+  .apropos .enveloppe { grid-template-columns: 1fr; }
+  .entete::before { clip-path: polygon(55% 0, 100% 0, 100% 45%); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .carte { transition: transform .2s ease; }
+  .carte:hover { transform: translateY(-4px); }
+}
+</style>
+
+<div class="maquette">Maquette : les articles affichés sont des exemples, à remplacer par les vôtres.</div>
+
+<header class="entete">
+  <div class="enveloppe">
+    <nav class="barre" aria-label="Navigation principale">
+      <a class="logo" href="#" data-vers="accueil">
+        <strong>BienvenueAuBloc</strong>
+        <span>Le bloc opératoire expliqué simplement</span>
+      </a>
+      <ul class="menu">
+        <li><button type="button" data-vers="accueil" aria-current="true">Accueil</button></li>
+        <li><button type="button" data-vers="articles">Articles</button></li>
+        <li><button type="button" data-vers="apropos">À propos</button></li>
+      </ul>
+    </nav>
+    <div class="accroche" id="vue-accroche">
+      <figure class="banniere">
+        <img src="images/banniere.jpg" width="1400" height="788" alt="Illustration d'une salle d'opération : scialytique, table d'opération et table d'instruments, avec le titre BienvenueAuBloc.">
+      </figure>
+      <div class="accroche-texte">
+        <h1>Vos premiers pas <em>au bloc</em>, expliqués simplement.</h1>
+        <div>
+          <p>Des articles courts et clairs pour les IDE débutants au bloc, les étudiants et les jeunes diplômés. Asepsie, instruments, installation du patient : les bases, une à une.</p>
+          <span class="etiquette">Écrit par une IBODE, pour les collègues</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="principal">
+  <div id="vue-accueil">
+    <section id="articles">
+      <div class="enveloppe">
+        <div class="titre-section">
+          <h2>Derniers articles</h2>
+          <p id="compteur"></p>
+        </div>
+        <div class="recherche">
+          <label for="champ-recherche">Rechercher un article</label>
+          <div class="champ">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+            <input type="search" id="champ-recherche" placeholder="Ex. : stérile, bistouri, check-list…" autocomplete="off">
+          </div>
+        </div>
+        <div class="themes" role="group" aria-label="Filtrer par thème" id="themes"></div>
+        <div class="grille" id="grille"></div>
+      </div>
+    </section>
+
+    <section class="apropos" id="apropos">
+      <div class="enveloppe">
+        <figure class="portrait">
+          <img src="images/portrait.webp" width="1254" height="1254" alt="Illustration d'une IBODE en tenue de bloc, calot fleuri, masque et lunettes, à la table d'instruments.">
+        </figure>
+        <div>
+          <h2>Qui suis-je ?</h2>
+          <p>Je suis une IBODE (Infirmière de Bloc Opératoire Diplômée d'État) passionnée par ce que je fais et toujours à la recherche de nouvelles connaissances. J'adore former et transmettre aux collègues tout ce que je peux.</p>
+          <p>J'ai décidé de me lancer dans l'écriture de ce blog il y a peu pour mélanger mon envie d'écriture et de transmission.</p>
+          <p>Ce blog est destiné à tous ceux qui voudront le lire, mais il a été pensé pour les collègues IDE débutants au bloc, étudiants, jeunes diplômés… Il a pour but de transmettre des concepts de base de manière simple et légère. En espérant que vous trouverez ce que vous cherchez.</p>
+          <p>Bonne lecture,<br><strong>MTNK</strong></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <article class="article" id="vue-article" hidden>
+    <div class="enveloppe">
+      <button class="retour" type="button" data-vers="articles">← Tous les articles</button>
+      <header>
+        <span class="meta">Hygiène</span>
+        <h1>Zone stérile : les 7 règles à connaître dès le premier jour</h1>
+        <p class="infos">Par MTNK · 5 min de lecture</p>
+      </header>
+      <div class="texte">
+        <p class="note-exemple">Article d'exemple pour montrer la mise en page. Le texte sera remplacé par le vôtre.</p>
+        <p>En arrivant au bloc, on a l'impression qu'il existe mille règles invisibles. En réalité, presque tout découle d'une idée simple : <strong>ce qui est stérile ne touche que ce qui est stérile</strong>. Voici les réflexes à prendre tout de suite.</p>
+
+        <h2>Les règles de base</h2>
+        <ol>
+          <li><strong>Stérile contre stérile.</strong> Une personne habillée stérilement ne touche que du matériel stérile. Une personne non stérile ne touche pas le champ ni le matériel stérile.</li>
+          <li><strong>Votre zone stérile est devant vous.</strong> Sur une casaque, seuls le devant (de la poitrine jusqu'à la hauteur du champ opératoire) et les manches sont considérés comme stériles. Le dos ne l'est pas.</li>
+          <li><strong>Les mains restent visibles.</strong> Gardez-les devant vous, au-dessus de la taille et sous les épaules. Jamais croisées sous les aisselles ni le long du corps.</li>
+          <li><strong>On ne tourne jamais le dos au champ.</strong> Pour croiser un collègue habillé, on passe dos à dos ou face à face.</li>
+          <li><strong>La table est stérile seulement sur le dessus.</strong> Ce qui tombe sous le niveau de la table est considéré comme contaminé.</li>
+          <li><strong>Le doute = contaminé.</strong> Si vous n'êtes pas sûre qu'un objet est resté stérile, on le change. Toujours.</li>
+          <li><strong>Une faute se signale tout de suite.</strong> Personne ne vous en voudra. Ce qui met le patient en danger, c'est une faute qu'on cache.</li>
+        </ol>
+
+        <div class="encadre">
+          <strong>À retenir</strong>
+          <p>Devant soi, au-dessus de la taille, stérile contre stérile. Et en cas de doute, on change.</p>
+        </div>
+
+        <h2>Le vocabulaire du jour</h2>
+        <dl class="lexique">
+          <dt>Champ opératoire</dt>
+          <dd>Le drap stérile qui délimite la zone d'intervention autour de l'incision.</dd>
+          <dt>Faute d'asepsie</dt>
+          <dd>Tout contact entre un élément stérile et un élément non stérile.</dd>
+          <dt>Circulante</dt>
+          <dd>L'infirmière non habillée qui apporte le matériel et fait le lien avec l'extérieur de la zone stérile.</dd>
+        </dl>
+
+        <p>Dans le prochain article, on verra comment s'habiller seule en casaque et gants stériles, étape par étape.</p>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <span>BienvenueAuBloc · Le bloc opératoire expliqué simplement</span>
+    <span>Ces articles ont un but pédagogique et ne remplacent pas les protocoles de votre établissement.</span>
+  </div>
+</footer>
+
+<script>
+const icones = {
+  asepsie: '<svg viewBox="0 0 100 100" fill="none" stroke="#292C6D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M30 88V52c0-4 3-6 6-6s6 2 6 6v-30c0-4 3-6 6-6s6 2 6 6v26-30c0-4 3-6 6-6s6 2 6 6v34-22c0-4 3-6 6-6s6 2 6 6v44c0 14-10 24-24 24H54c-12 0-24-8-24-12z" fill="#FFD1D1"/></svg>',
+  instruments: '<svg viewBox="0 0 100 100" fill="none" stroke="#292C6D" stroke-width="3" stroke-linecap="round"><circle cx="30" cy="78" r="10" fill="#FFD1D1"/><circle cx="56" cy="80" r="10" fill="#FFD1D1"/><path d="M37 71l40-58M49 73L33 12"/><circle cx="44" cy="58" r="2.5" fill="#292C6D"/></svg>',
+  installation: '<svg viewBox="0 0 100 100" fill="none" stroke="#292C6D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="48" width="80" height="12" rx="3" fill="#FFD1D1"/><path d="M50 60v22M36 82h28"/><circle cx="20" cy="38" r="7" fill="#E07A84" stroke="none"/><path d="M30 42h52"/></svg>',
+  hygiene: '<svg viewBox="0 0 100 100" fill="none" stroke="#292C6D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M40 30h20v10H40z"/><path d="M50 20v10M44 20h12"/><path d="M34 40h32l4 46H30z" fill="#FFD1D1"/><path d="M50 54c-5 7-7 10-7 13a7 7 0 0 0 14 0c0-3-2-6-7-13z" fill="#E07A84" stroke="none"/></svg>',
+  electrochirurgie: '<svg viewBox="0 0 100 100" fill="none" stroke="#292C6D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M70 14L50 50h18L32 88l10-30H26l18-44z" fill="#FFD1D1"/></svg>',
+  equipe: '<svg viewBox="0 0 100 100" fill="none" stroke="#292C6D" stroke-width="3" stroke-linecap="round"><circle cx="34" cy="38" r="11" fill="#FFD1D1"/><circle cx="66" cy="38" r="11" fill="#E07A84" stroke="none"/><path d="M14 82c2-14 10-22 20-22s18 8 20 22M46 82c2-14 10-22 20-22s18 8 20 22"/></svg>',
+  securite: '<svg viewBox="0 0 100 100" fill="none" stroke="#292C6D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="24" y="16" width="52" height="70" rx="4" fill="#FFD1D1"/><path d="M34 36l5 5 9-10M34 56l5 5 9-10M56 37h12M56 57h12M34 74h34"/></svg>',
+  chirurgies: '<svg viewBox="0 0 100 100" fill="none" stroke="#292C6D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 82l40-40" stroke-width="7"/><path d="M58 42l6-6c10-10 20-14 22-12s-2 12-12 22l-10 10z" fill="#FFD1D1"/><path d="M58 42l6 6"/></svg>',
+  organisation: '<svg viewBox="0 0 100 100" fill="none" stroke="#292C6D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="22" width="68" height="62" rx="4" fill="#FFD1D1"/><path d="M16 38h68M34 14v14M66 14v14"/><rect x="28" y="48" width="12" height="10" fill="#E07A84" stroke="none"/><path d="M48 53h24M28 70h44"/></svg>'
+};
+
+const articles = [
+  { theme: "Hygiène", icone: "asepsie", titre: "Zone stérile : les 7 règles à connaître dès le premier jour", resume: "Stérile contre stérile, mains devant soi, jamais dos au champ : les réflexes qui protègent le patient.", duree: 5, complet: true },
+  { theme: "Matériel", icone: "instruments", titre: "Pince, clamp, porte-aiguille : reconnaître les instruments de base", resume: "Une boîte de base contient souvent une trentaine d'instruments. Apprenons à les nommer et à les tendre au chirurgien.", duree: 7 },
+  { theme: "Sécurité", icone: "securite", titre: "La check-list « Sécurité du patient au bloc opératoire »", resume: "Avant l'induction, avant l'incision, après l'intervention : à quoi sert chaque temps de la check-list HAS ?", duree: 5 },
+  { theme: "Chirurgies", icone: "chirurgies", titre: "La cholécystectomie sous cœlioscopie, pas à pas", resume: "Installation, matériel de cœlioscopie, grands temps opératoires : une intervention fréquente pour bien débuter.", duree: 8 },
+  { theme: "Hygiène", icone: "hygiene", titre: "Le lavage chirurgical des mains, étape par étape", resume: "Lavage simple, friction hydro-alcoolique, durée, ordre des zones : tout ce qu'il faut savoir avant de s'habiller.", duree: 6 },
+  { theme: "Organisation", icone: "organisation", titre: "Une journée au bloc : du programme opératoire au bionettoyage", resume: "Programme, ouverture de salle, enchaînement des patients, fin de journée : comment s'organise une salle d'opération.", duree: 6 },
+  { theme: "Équipe", icone: "equipe", titre: "Instrumentiste, circulante, aide-opératoire : qui fait quoi ?", resume: "Les rôles de chacun en salle, pour savoir où se placer et quoi faire dès la première intervention.", duree: 4 },
+  { theme: "Sécurité", icone: "installation", titre: "Installer le patient en décubitus dorsal sans risque", resume: "Points d'appui, bras, plaque de bistouri : les vérifications pour éviter les lésions liées à la posture.", duree: 6 },
+  { theme: "Matériel", icone: "electrochirurgie", titre: "Bistouri électrique : monopolaire ou bipolaire ?", resume: "Comment ça marche, où poser la plaque et les erreurs à éviter avec le bistouri électrique.", duree: 6 }
+];
+
+const grille = document.getElementById("grille");
+const zoneThemes = document.getElementById("themes");
+const compteur = document.getElementById("compteur");
+const themes = ["Tous", "Sécurité", "Hygiène", "Matériel", "Chirurgies", "Équipe", "Organisation"];
+let themeActif = "Tous";
+
+function echapper(t) { return t.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+function afficherThemes() {
+  zoneThemes.innerHTML = themes.map(t =>
+    `<button type="button" aria-pressed="${t === themeActif}" data-theme="${echapper(t)}">${echapper(t)}</button>`).join("");
+}
+
+// Recherche sans tenir compte des accents ni des majuscules ("sterile" trouve "stérile")
+function normaliser(t) { return t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+const champRecherche = document.getElementById("champ-recherche");
+
+function afficherArticles() {
+  const mots = normaliser(champRecherche.value).split(/\s+/).filter(Boolean);
+  const liste = articles.filter(a => {
+    if (themeActif !== "Tous" && a.theme !== themeActif) return false;
+    const texte = normaliser(a.titre + " " + a.resume + " " + a.theme);
+    return mots.every(m => texte.includes(m));
+  });
+  const enUne = themeActif === "Tous" && mots.length === 0;
+  compteur.textContent = liste.length + (liste.length > 1 ? " articles" : " article");
+  if (!liste.length) {
+    grille.innerHTML = mots.length
+      ? `<p class="vide">Aucun article ne contient « ${echapper(champRecherche.value.trim())} »${themeActif !== "Tous" ? " dans le thème " + echapper(themeActif) : ""}. Essayez un autre mot.</p>`
+      : '<p class="vide">Aucun article dans ce thème pour le moment.</p>';
+    return;
+  }
+  grille.innerHTML = liste.map((a, i) => `
+    <article class="carte${i === 0 && enUne ? " une" : ""}">
+      <a href="#" data-article="${articles.indexOf(a)}">
+        <div class="illus" aria-hidden="true">${icones[a.icone]}</div>
+        <div class="corps">
+          <span class="meta">${echapper(a.theme)}</span>
+          <h3>${echapper(a.titre)}</h3>
+          <p>${echapper(a.resume)}</p>
+          <span class="duree">${a.duree} min de lecture</span>
+        </div>
+      </a>
+    </article>`).join("");
+}
+champRecherche.addEventListener("input", afficherArticles);
+
+zoneThemes.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  themeActif = b.dataset.theme; afficherThemes(); afficherArticles();
+});
+
+const vueAccueil = document.getElementById("vue-accueil");
+const vueArticle = document.getElementById("vue-article");
+const vueAccroche = document.getElementById("vue-accroche");
+
+function allerA(cible) {
+  const article = cible === "article";
+  vueAccueil.hidden = article; vueArticle.hidden = !article; vueAccroche.hidden = article;
+  document.querySelectorAll(".menu button").forEach(b =>
+    b.setAttribute("aria-current", String(!article && b.dataset.vers === (cible === "accueil" ? "accueil" : cible))));
+  if (article || cible === "accueil") window.scrollTo({ top: 0 });
+  else document.getElementById(cible).scrollIntoView();
+}
+
+document.addEventListener("click", e => {
+  const carte = e.target.closest("[data-article]");
+  if (carte) {
+    e.preventDefault();
+    if (articles[carte.dataset.article].complet) allerA("article");
+    else { carte.querySelector("p").textContent = "Cet article d'exemple n'a pas encore de texte. Ouvrez le premier article pour voir la mise en page."; }
+    return;
+  }
+  const lien = e.target.closest("[data-vers]");
+  if (lien) { e.preventDefault(); allerA(lien.dataset.vers); }
+});
+
+afficherThemes(); afficherArticles();
+</script>

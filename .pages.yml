@@ -1,0 +1,92 @@
+# Configuration de l'espace d'écriture (Pages CMS : https://app.pagescms.org)
+media:
+  input: src/images/articles
+  output: /images/articles
+
+content:
+  - name: articles
+    label: Articles
+    type: collection
+    path: src/articles
+    extension: md
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title, categorie, date, brouillon]
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: date
+        label: Date de publication
+        type: date
+        required: true
+      - name: categorie
+        label: Catégorie
+        type: select
+        required: true
+        options:
+          values: [Sécurité, Hygiène, Matériel, Chirurgies, Équipe, Organisation]
+      - name: resume
+        label: Résumé (2 lignes affichées sur la page d'accueil)
+        type: text
+        required: true
+      - name: image
+        label: Image de couverture (facultative)
+        type: image
+      - name: brouillon
+        label: Brouillon (cochée = l'article n'est pas visible sur le site)
+        type: boolean
+        default: true
+      - name: body
+        label: Texte de l'article
+        type: rich-text
+
+  - name: accueil
+    label: Page d'accueil
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - name: nom
+        label: Nom du blog
+        type: string
+      - name: slogan
+        label: Slogan (à côté du nom, en haut)
+        type: string
+      - name: description
+        label: Description pour Google
+        type: text
+      - name: banniere
+        label: Grande image d'accueil
+        type: image
+      - name: accroche_titre
+        label: Grand titre (mettez des *étoiles* autour des mots à colorer en rose)
+        type: string
+      - name: accroche_texte
+        label: Phrase sous le grand titre
+        type: text
+      - name: accroche_signature
+        label: Petite ligne sous la phrase
+        type: string
+      - name: presentation_titre
+        label: Titre de la présentation
+        type: string
+      - name: portrait
+        label: Image de la présentation
+        type: image
+      - name: presentation
+        label: Texte de la présentation
+        type: rich-text
+      - name: signature
+        label: Signature des articles
+        type: string
+      - name: avertissement
+        label: Phrase en bas de page
+        type: text

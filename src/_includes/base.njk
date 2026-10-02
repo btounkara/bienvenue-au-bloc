@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.nom }}</title>
+  <meta name="description" content="{{ resume or site.description }}">
+  <meta property="og:title" content="{{ title or site.nom }}">
+  <meta property="og:description" content="{{ resume or site.description }}">
+  <meta property="og:type" content="{% if layout == 'article.njk' %}article{% else %}website{% endif %}">
+  <meta name="theme-color" content="#292C6D">
+  <link rel="icon" href="/images/icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <a class="evitement" href="#principal">Aller au contenu</a>
+  <header class="entete">
+    <div class="enveloppe">
+      <nav class="barre" aria-label="Navigation principale">
+        <a class="logo" href="/">
+          <strong>{{ site.nom }}</strong>
+          <span>{{ site.slogan }}</span>
+        </a>
+        <ul class="menu">
+          <li><a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Accueil</a></li>
+          <li><a href="/#articles">Articles</a></li>
+          <li><a href="/#apropos">À propos</a></li>
+        </ul>
+      </nav>
+      {% block entete %}{% endblock %}
+    </div>
+  </header>
+
+  <main id="principal">
+    {% block principal %}{% endblock %}
+  </main>
+
+  <footer class="pied">
+    <div class="enveloppe">
+      <span>{{ site.nom }} · {{ site.slogan }}</span>
+      <span>{{ site.avertissement }}</span>
+    </div>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

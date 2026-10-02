@@ -1,0 +1,30 @@
+{% extends "base.njk" %}
+{% from "icones.njk" import iconeCategorie %}
+
+{% block principal %}
+<article class="article">
+  <div class="enveloppe">
+    <a class="retour" href="/#articles">← Tous les articles</a>
+    <header>
+      <span class="meta">{{ categorie }}</span>
+      <h1>{{ title }}</h1>
+      <p class="infos">Par {{ site.signature }} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time> · {{ content | dureeLecture }} min de lecture</p>
+    </header>
+    {% if image %}
+    <figure class="couverture"><img src="{{ image }}" alt=""></figure>
+    {% endif %}
+    <div class="texte">
+      {{ content | safe }}
+    </div>
+
+    {% set precedent = collections.articles | getPreviousCollectionItem(page) %}
+    {% set suivant = collections.articles | getNextCollectionItem(page) %}
+    {% if precedent or suivant %}
+    <nav class="voisins" aria-label="Autres articles">
+      {% if suivant %}<a href="{{ suivant.url }}"><span>Article précédent</span>{{ suivant.data.title }}</a>{% else %}<span></span>{% endif %}
+      {% if precedent %}<a class="droite" href="{{ precedent.url }}"><span>Article suivant</span>{{ precedent.data.title }}</a>{% endif %}
+    </nav>
+    {% endif %}
+  </div>
+</article>
+{% endblock %}

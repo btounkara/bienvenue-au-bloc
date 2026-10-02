@@ -1,0 +1,87 @@
+---
+permalink: /
+---
+{% extends "base.njk" %}
+{% from "icones.njk" import icone, iconeCategorie %}
+
+{% block entete %}
+<div class="accroche">
+  <figure class="banniere">
+    <img src="{{ site.banniere }}" width="1400" height="788" alt="Illustration d'une salle d'opération : scialytique, table d'opération et table d'instruments, avec le titre BienvenueAuBloc.">
+  </figure>
+  <div class="accroche-texte">
+    <h1>{{ site.accroche_titre | motsEnCouleur | safe }}</h1>
+    <div>
+      <p>{{ site.accroche_texte }}</p>
+      <span class="etiquette">{{ site.accroche_signature }}</span>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block principal %}
+<section id="articles">
+  <div class="enveloppe">
+    <div class="titre-section">
+      <h2>Derniers articles</h2>
+      <p id="compteur">{{ collections.articles.length }} article{% if collections.articles.length > 1 %}s{% endif %}</p>
+    </div>
+
+    {% if collections.articles.length %}
+    <div class="recherche">
+      <label for="champ-recherche">Rechercher un article</label>
+      <div class="champ">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+        <input type="search" id="champ-recherche" placeholder="Ex. : stérile, bistouri, check-list…" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="themes" role="group" aria-label="Filtrer par thème" id="themes">
+      <button type="button" aria-pressed="true" data-theme="Tous">Tous</button>
+      {%- for c in categories %}
+      <button type="button" aria-pressed="false" data-theme="{{ c.nom }}">{{ c.nom }}</button>
+      {%- endfor %}
+    </div>
+    {% endif %}
+
+    <div class="grille" id="grille" data-index="{{ '/recherche.json' | htmlBaseUrl }}">
+      {%- for article in collections.articles %}
+      <article class="carte{% if loop.first %} une{% endif %}" data-theme="{{ article.data.categorie }}" data-url="{{ article.url }}">
+        <a href="{{ article.url }}">
+          <div class="illus{% if article.data.image %} photo{% endif %}">
+            {%- if article.data.image %}
+            <img src="{{ article.data.image }}" alt="" loading="lazy">
+            {%- else %}
+            {{ iconeCategorie(article.data.categorie, categories) }}
+            {%- endif %}
+          </div>
+          <div class="corps">
+            <span class="meta">{{ article.data.categorie }}</span>
+            <h3>{{ article.data.title }}</h3>
+            <p>{{ article.data.resume }}</p>
+            <span class="duree">{{ article.date | dateFr }} · {{ article.content | dureeLecture }} min de lecture</span>
+          </div>
+        </a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="vide" id="vide"{% if collections.articles.length %} hidden{% endif %}>Les premiers articles arrivent très bientôt.</p>
+  </div>
+</section>
+
+<section class="apropos" id="apropos">
+  <div class="enveloppe">
+    <figure class="portrait">
+      <img src="{{ site.portrait }}" loading="lazy" alt="Illustration d'une IBODE en tenue de bloc, calot fleuri, masque et lunettes, à la table d'instruments.">
+    </figure>
+    <div>
+      <h2>{{ site.presentation_titre }}</h2>
+      <div class="presentation">{{ site.presentation | safe }}</div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/assets/recherche.js" defer></script>
+{% endblock %}
