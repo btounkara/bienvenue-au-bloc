@@ -2,7 +2,7 @@
 permalink: /
 ---
 {% extends "base.njk" %}
-{% from "icones.njk" import icone, iconeCategorie %}
+{% from "cartes.njk" import carte %}
 
 {% block entete %}
 <div class="accroche">
@@ -20,52 +20,63 @@ permalink: /
 {% endblock %}
 
 {% block principal %}
-<section id="articles">
+{% set total = collections.publications.length %}
+<section id="publications">
+  <span id="portraits" class="ancre"></span><span id="erreurs" class="ancre"></span>
   <div class="enveloppe">
-    <div class="titre-section">
-      <h2>Derniers articles</h2>
-      <p id="compteur">{{ collections.articles.length }} article{% if collections.articles.length > 1 %}s{% endif %}</p>
+    <div class="rubriques">
+      <a class="rubrique" href="#portraits" data-filtre="Les portraits du bloc">
+        <strong>Les portraits du bloc</strong>
+        <span>Des professionnels du bloc racontent leur métier, en audio.</span>
+        <em>{{ collections.portraits.length }} portrait{% if collections.portraits.length > 1 %}s{% endif %}</em>
+      </a>
+      <a class="rubrique" href="#erreurs" data-filtre="L'erreur à ne plus commettre">
+        <strong>L'erreur à ne plus commettre</strong>
+        <span>Une collègue partage anonymement une erreur, pour que d'autres ne la refassent pas.</span>
+        <em>{{ collections.erreurs.length }} retour{% if collections.erreurs.length > 1 %}s{% endif %} d'expérience</em>
+      </a>
     </div>
 
-    {% if collections.articles.length %}
+    <div class="titre-section">
+      <h2>Dernières publications</h2>
+      <p id="compteur">{{ total }} publication{% if total > 1 %}s{% endif %}</p>
+    </div>
+
+    {% if total %}
     <div class="recherche">
-      <label for="champ-recherche">Rechercher un article</label>
+      <label for="champ-recherche">Rechercher</label>
       <div class="champ">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
-        <input type="search" id="champ-recherche" placeholder="Ex. : stérile, bistouri, check-list…" autocomplete="off">
+        <input type="search" id="champ-recherche" placeholder="Ex. : IADE, instrumentiste, compresses…" autocomplete="off">
       </div>
     </div>
 
-    <div class="themes" role="group" aria-label="Filtrer par thème" id="themes">
-      <button type="button" aria-pressed="true" data-theme="Tous">Tous</button>
-      {%- for c in categories %}
-      <button type="button" aria-pressed="false" data-theme="{{ c.nom }}">{{ c.nom }}</button>
-      {%- endfor %}
+    <div class="themes" role="group" aria-label="Filtrer par rubrique" id="themes">
+      <button type="button" aria-pressed="true" data-theme="Tous">Tout</button>
+      <button type="button" aria-pressed="false" data-theme="Les portraits du bloc">Les portraits du bloc</button>
+      <button type="button" aria-pressed="false" data-theme="L'erreur à ne plus commettre">L'erreur à ne plus commettre</button>
     </div>
     {% endif %}
 
     <div class="grille" id="grille" data-index="{{ '/recherche.json' | htmlBaseUrl }}">
-      {%- for article in collections.articles %}
-      <article class="carte{% if loop.first %} une{% endif %}" data-theme="{{ article.data.categorie }}" data-url="{{ article.url }}">
-        <a href="{{ article.url }}">
-          <div class="illus{% if article.data.image %} photo{% endif %}">
-            {%- if article.data.image %}
-            <img src="{{ article.data.image }}" alt="" loading="lazy">
-            {%- else %}
-            {{ iconeCategorie(article.data.categorie, categories) }}
-            {%- endif %}
-          </div>
-          <div class="corps">
-            <span class="meta">{{ article.data.categorie }}</span>
-            <h3>{{ article.data.title }}</h3>
-            <p>{{ article.data.resume }}</p>
-            <span class="duree">{{ article.date | dateFr }} · {{ article.content | dureeLecture }} min de lecture</span>
-          </div>
-        </a>
-      </article>
+      {%- for p in collections.publications %}
+      {{ carte(p, loop.first) }}
       {%- endfor %}
     </div>
-    <p class="vide" id="vide"{% if collections.articles.length %} hidden{% endif %}>Les premiers articles arrivent très bientôt.</p>
+    <p class="vide" id="vide"{% if total %} hidden{% endif %}>Le premier portrait arrive très bientôt. Suivez le blog sur Instagram pour ne pas le manquer.</p>
+  </div>
+</section>
+
+<section class="participer" id="participer">
+  <div class="enveloppe">
+    <h2>{{ site.participer_titre }}</h2>
+    <p>{{ site.participer_texte }}</p>
+    {% if site.email or site.instagram %}
+    <div class="contacts">
+      {% if site.instagram %}<a class="bouton" href="{{ site.instagram }}">Me contacter sur Instagram</a>{% endif %}
+      {% if site.email %}<span class="courriel">Par e-mail : <a href="mailto:{{ site.email }}">{{ site.email }}</a></span>{% endif %}
+    </div>
+    {% endif %}
   </div>
 </section>
 

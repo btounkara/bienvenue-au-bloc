@@ -1,5 +1,5 @@
-// Recherche et filtre par catégorie sur la page d'accueil.
-// La recherche porte sur le titre, le résumé, la catégorie et le texte complet des articles.
+// Recherche et filtre par rubrique sur la page d'accueil.
+// La recherche porte sur tout le contenu des publications (titre, résumé, citations, témoignage…).
 (function () {
   const grille = document.getElementById("grille");
   const champ = document.getElementById("champ-recherche");
@@ -13,7 +13,7 @@
   let themeActif = "Tous";
   let index = null; // url -> texte, chargé à la première recherche
 
-  // "sterile" trouve "stérile", sans tenir compte des majuscules
+  // "anesthesie" trouve "anesthésie", sans tenir compte des majuscules
   const normaliser = (t) => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
   async function chargerIndex() {
@@ -21,7 +21,7 @@
     index = {};
     try {
       const reponse = await fetch(grille.dataset.index);
-      for (const a of await reponse.json()) index[a.url] = normaliser(a.texte);
+      for (const p of await reponse.json()) index[p.url] = normaliser(p.texte);
     } catch {
       // Sans index, on cherche au moins dans ce qui est affiché sur les cartes
     }
@@ -42,13 +42,20 @@
       if (ok) visibles++;
     }
     premiere.classList.toggle("une", themeActif === "Tous" && mots.length === 0);
-    compteur.textContent = visibles + (visibles > 1 ? " articles" : " article");
+    compteur.textContent = visibles + (visibles > 1 ? " publications" : " publication");
     vide.hidden = visibles > 0;
     if (!visibles) {
       vide.textContent = mots.length
-        ? `Aucun article ne contient « ${saisie} »${themeActif !== "Tous" ? " dans le thème " + themeActif : ""}. Essayez un autre mot.`
-        : "Aucun article dans ce thème pour le moment.";
+        ? `Aucune publication ne contient « ${saisie} ». Essayez un autre mot.`
+        : "Rien dans cette rubrique pour le moment. Revenez bientôt !";
     }
+  }
+
+  function choisirTheme(theme) {
+    themeActif = theme;
+    zoneThemes.querySelectorAll("button").forEach((b) =>
+      b.setAttribute("aria-pressed", String(b.dataset.theme === theme)));
+    filtrer();
   }
 
   champ.addEventListener("input", async () => {
@@ -58,9 +65,17 @@
 
   zoneThemes.addEventListener("click", (e) => {
     const bouton = e.target.closest("button");
-    if (!bouton) return;
-    themeActif = bouton.dataset.theme;
-    zoneThemes.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b === bouton)));
-    filtrer();
+    if (bouton) choisirTheme(bouton.dataset.theme);
   });
+
+  // Les liens "#portraits" et "#erreurs" (menu, encarts) ouvrent la bonne rubrique
+  const depuisAncre = () => {
+    if (location.hash === "#portraits") choisirTheme("Les portraits du bloc");
+    else if (location.hash === "#erreurs") choisirTheme("L'erreur à ne plus commettre");
+  };
+  window.addEventListener("hashchange", depuisAncre);
+  document.addEventListener("click", (e) => {
+    if (e.target.closest('a[href$="#portraits"], a[href$="#erreurs"]')) setTimeout(depuisAncre);
+  });
+  depuisAncre();
 })();

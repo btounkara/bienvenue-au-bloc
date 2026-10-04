@@ -1,52 +1,133 @@
 # Configuration de l'espace d'écriture (Pages CMS : https://app.pagescms.org)
 media:
-  input: src/images/articles
-  output: /images/articles
+  input: src/images/publications
+  output: /images/publications
 
 content:
-  - name: articles
-    label: Articles
+  - name: portraits
+    label: Les portraits du bloc
     type: collection
-    path: src/articles
+    path: src/portraits
     extension: md
     format: yaml-frontmatter
     filename: "{primary}.md"
     view:
       primary: title
-      fields: [title, categorie, date, brouillon]
+      fields: [title, metier, date, brouillon]
       sort: [date, title]
       default:
         sort: date
         order: desc
     fields:
       - name: title
-        label: Titre
+        label: Titre (ex. Camille, IADE : « Au bloc, on ne travaille jamais seule »)
         type: string
         required: true
       - name: date
         label: Date de publication
         type: date
         required: true
-      - name: categorie
-        label: Catégorie
-        type: select
+      - name: prenom
+        label: Prénom de la personne
+        type: string
+      - name: metier
+        label: Métier (ex. IBODE, IADE, chirurgien, aide-soignante…)
+        type: string
         required: true
-        options:
-          values: [Sécurité, Hygiène, Matériel, Chirurgies, Équipe, Organisation]
       - name: resume
         label: Résumé (2 lignes affichées sur la page d'accueil)
         type: text
         required: true
       - name: image
-        label: Image de couverture (facultative)
+        label: Photo ou illustration (facultative)
         type: image
+      - name: spotify
+        label: Lien Spotify de l'épisode (Partager > Copier le lien de l'épisode)
+        type: string
+      - name: duree
+        label: Durée de l'interview, en minutes
+        type: number
+      - name: body
+        label: Présentation de la personne (son parcours en quelques lignes)
+        type: rich-text
+      - name: moments
+        label: Les moments clés
+        type: object
+        list: true
+        fields:
+          - name: temps
+            label: Minutage (ex. 04:30)
+            type: string
+          - name: sujet
+            label: De quoi on parle
+            type: string
+      - name: citations
+        label: Les phrases à retenir
+        type: text
+        list: true
+      - name: instagram
+        label: Lien de la publication Instagram (facultatif)
+        type: string
       - name: brouillon
-        label: Brouillon (cochée = l'article n'est pas visible sur le site)
+        label: Brouillon (cochée = invisible sur le site)
         type: boolean
         default: true
-      - name: body
-        label: Texte de l'article
-        type: rich-text
+
+  - name: erreurs
+    label: L'erreur à ne plus commettre
+    type: collection
+    path: src/erreurs
+    extension: md
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title, date, brouillon]
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Titre (ex. Le compte des compresses transmis trop vite)
+        type: string
+        required: true
+      - name: date
+        label: Date de publication
+        type: date
+        required: true
+      - name: metier
+        label: Qui témoigne, sans nom (ex. IBODE, 2 ans d'expérience)
+        type: string
+      - name: resume
+        label: Résumé (2 lignes affichées sur la page d'accueil)
+        type: text
+        required: true
+      - name: image
+        label: Illustration (facultative)
+        type: image
+      - name: situation
+        label: La situation (laissez une ligne vide entre deux paragraphes)
+        type: text
+      - name: deroulement
+        label: Ce qui s'est passé
+        type: text
+      - name: pourquoi
+        label: Pourquoi c'est arrivé
+        type: text
+      - name: appris
+        label: Ce que j'en ai appris
+        type: text
+      - name: reflexe
+        label: Le réflexe à retenir (une ou deux phrases, dans l'encadré rose)
+        type: text
+      - name: instagram
+        label: Lien de la publication Instagram (facultatif)
+        type: string
+      - name: brouillon
+        label: Brouillon (cochée = invisible sur le site)
+        type: boolean
+        default: true
 
   - name: accueil
     label: Page d'accueil
@@ -75,6 +156,18 @@ content:
       - name: accroche_signature
         label: Petite ligne sous la phrase
         type: string
+      - name: participer_titre
+        label: Titre de l'appel à témoigner
+        type: string
+      - name: participer_texte
+        label: Texte de l'appel à témoigner
+        type: text
+      - name: instagram
+        label: Lien de votre compte Instagram
+        type: string
+      - name: email
+        label: Adresse e-mail de contact (facultative, elle sera visible par tous)
+        type: string
       - name: presentation_titre
         label: Titre de la présentation
         type: string
@@ -85,7 +178,7 @@ content:
         label: Texte de la présentation
         type: rich-text
       - name: signature
-        label: Signature des articles
+        label: Votre signature
         type: string
       - name: avertissement
         label: Phrase en bas de page

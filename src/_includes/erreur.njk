@@ -1,0 +1,37 @@
+{% extends "base.njk" %}
+
+{% block principal %}
+<article class="article">
+  <div class="enveloppe">
+    <a class="retour" href="/#erreurs">← Toutes les erreurs</a>
+    <header>
+      <span class="meta">L'erreur à ne plus commettre{% if brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
+      <h1>{{ title }}</h1>
+      <p class="infos">Témoignage anonyme{% if metier %} · {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time></p>
+    </header>
+
+    <div class="texte">
+      {% if image %}
+      <figure class="couverture"><img src="{{ image }}" alt=""></figure>
+      {% endif %}
+
+      <p class="bienveillance">Cette erreur aurait pu arriver à n'importe qui. Merci à la collègue qui a accepté de la partager pour que d'autres ne la commettent pas.</p>
+
+      {% if situation %}<h2>La situation</h2>{{ situation | paragraphes | safe }}{% endif %}
+      {% if deroulement %}<h2>Ce qui s'est passé</h2>{{ deroulement | paragraphes | safe }}{% endif %}
+      {% if pourquoi %}<h2>Pourquoi c'est arrivé</h2>{{ pourquoi | paragraphes | safe }}{% endif %}
+      {% if appris %}<h2>Ce que j'en ai appris</h2>{{ appris | paragraphes | safe }}{% endif %}
+
+      {% if reflexe %}
+      <blockquote class="reflexe">{{ reflexe | paragraphes | safe }}</blockquote>
+      {% endif %}
+
+      {% if instagram %}
+      <p class="liens-episode"><a href="{{ instagram }}">Voir la publication Instagram</a></p>
+      {% endif %}
+    </div>
+
+    {% include "voisins.njk" %}
+  </div>
+</article>
+{% endblock %}

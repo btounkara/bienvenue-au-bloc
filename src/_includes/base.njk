@@ -7,7 +7,7 @@
   <meta name="description" content="{{ resume or site.description }}">
   <meta property="og:title" content="{{ title or site.nom }}">
   <meta property="og:description" content="{{ resume or site.description }}">
-  <meta property="og:type" content="{% if layout == 'article.njk' %}article{% else %}website{% endif %}">
+  <meta property="og:type" content="{% if rubrique %}article{% else %}website{% endif %}">
   <meta name="theme-color" content="#292C6D">
   <link rel="icon" href="/images/icone.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,8 @@
         </a>
         <ul class="menu">
           <li><a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Accueil</a></li>
-          <li><a href="/#articles">Articles</a></li>
+          <li><a href="/#portraits"{% if rubrique == "Les portraits du bloc" %} aria-current="page"{% endif %}>Les portraits</a></li>
+          <li><a href="/#erreurs"{% if rubrique == "L'erreur à ne plus commettre" %} aria-current="page"{% endif %}>Les erreurs</a></li>
           <li><a href="/#apropos">À propos</a></li>
         </ul>
       </nav>
@@ -40,7 +41,7 @@
 
   <footer class="pied">
     <div class="enveloppe">
-      <span>{{ site.nom }} · {{ site.slogan }}</span>
+      <span>{{ site.nom }} · {{ site.slogan }}{% if site.instagram %} · <a href="{{ site.instagram }}" rel="me">Instagram</a>{% endif %}</span>
       <span>{{ site.avertissement }}</span>
     </div>
   </footer>

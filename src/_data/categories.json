@@ -1,8 +1,0 @@
-[
-  { "nom": "Sécurité", "icone": "securite" },
-  { "nom": "Hygiène", "icone": "hygiene" },
-  { "nom": "Matériel", "icone": "materiel" },
-  { "nom": "Chirurgies", "icone": "chirurgies" },
-  { "nom": "Équipe", "icone": "equipe" },
-  { "nom": "Organisation", "icone": "organisation" }
-]

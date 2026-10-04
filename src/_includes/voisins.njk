@@ -1,0 +1,10 @@
+{#- Liens vers la publication plus récente et plus ancienne de la même rubrique -#}
+{% set liste = collections.portraits if rubrique == "Les portraits du bloc" else collections.erreurs %}
+{% set plusRecent = liste | getPreviousCollectionItem(page) %}
+{% set plusAncien = liste | getNextCollectionItem(page) %}
+{% if plusRecent or plusAncien %}
+<nav class="voisins" aria-label="Autres publications">
+  {% if plusAncien %}<a href="{{ plusAncien.url }}"><span>Précédent</span>{{ plusAncien.data.title }}</a>{% else %}<span></span>{% endif %}
+  {% if plusRecent %}<a class="droite" href="{{ plusRecent.url }}"><span>Suivant</span>{{ plusRecent.data.title }}</a>{% endif %}
+</nav>
+{% endif %}

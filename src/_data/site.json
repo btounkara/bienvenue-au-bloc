@@ -1,14 +1,18 @@
 {
   "nom": "BienvenueAuBloc",
-  "slogan": "Le bloc opératoire expliqué simplement",
-  "description": "Des articles courts et clairs pour les IDE débutants au bloc opératoire, les étudiants et les jeunes diplômés, écrits par une IBODE.",
+  "slogan": "Ceux qui font le bloc prennent la parole",
+  "description": "Des portraits audio de professionnels du bloc opératoire et des retours d’expérience partagés anonymement, pour apprendre du vécu des autres.",
   "banniere": "/images/banniere.jpg",
-  "accroche_titre": "Vos premiers pas *au bloc*, expliqués simplement.",
-  "accroche_texte": "Des articles courts et clairs pour les IDE débutants au bloc, les étudiants et les jeunes diplômés. Asepsie, instruments, installation du patient : les bases, une à une.",
-  "accroche_signature": "Écrit par une IBODE, pour les collègues",
+  "accroche_titre": "Ceux qui font le bloc *prennent la parole*.",
+  "accroche_texte": "Des portraits audio de professionnels du bloc opératoire et des erreurs partagées anonymement par des collègues, pour apprendre du vécu des autres.",
+  "accroche_signature": "Une initiative d’une IBODE, pour les collègues",
   "presentation_titre": "Qui suis-je ?",
   "portrait": "/images/portrait.webp",
   "presentation": "<p>Je suis une IBODE (Infirmière de Bloc Opératoire Diplômée d'État) passionnée par ce que je fais et toujours à la recherche de nouvelles connaissances. J'adore former et transmettre aux collègues tout ce que je peux.</p><p>J'ai décidé de me lancer dans l'écriture de ce blog il y a peu pour mélanger mon envie d'écriture et de transmission.</p><p>Ce blog est destiné à tous ceux qui voudront le lire, mais il a été pensé pour les collègues IDE débutants au bloc, étudiants, jeunes diplômés… Il a pour but de transmettre des concepts de base de manière simple et légère. En espérant que vous trouverez ce que vous cherchez.</p><p>Bonne lecture,<br><strong>MTNK</strong></p>",
   "signature": "MTNK",
-  "avertissement": "Ces articles ont un but pédagogique et ne remplacent pas les protocoles de votre établissement."
+  "avertissement": "Les témoignages publiés ici sont personnels. Ils ne remplacent pas les protocoles de votre établissement.",
+  "participer_titre": "Vous aussi, prenez la parole",
+  "participer_texte": "Vous travaillez au bloc et vous aimeriez raconter votre métier, ou partager anonymement une erreur pour que d’autres ne la commettent pas ? Écrivez-moi, je vous recontacte.",
+  "instagram": "",
+  "email": ""
 }

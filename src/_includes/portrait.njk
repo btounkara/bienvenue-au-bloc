@@ -1,0 +1,61 @@
+{% extends "base.njk" %}
+
+{% block principal %}
+{% set lecteur = spotify | lecteurSpotify %}
+<article class="article">
+  <div class="enveloppe">
+    <a class="retour" href="/#portraits">← Tous les portraits</a>
+    <header>
+      <span class="meta">Les portraits du bloc{% if brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
+      <h1>{{ title }}</h1>
+      <p class="infos">{% if prenom %}{{ prenom }}{% endif %}{% if metier %}, {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time>{% if duree %} · {{ duree }} min d'écoute{% endif %}</p>
+    </header>
+
+    <div class="ecoute">
+      {% if lecteur %}
+      <iframe class="lecteur" src="{{ lecteur }}" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Écouter l'interview sur Spotify"></iframe>
+      {% elif spotify %}
+      <a class="bouton" href="{{ spotify }}">Écouter l'interview</a>
+      {% else %}
+      <p class="attente">Le lecteur audio apparaîtra ici dès que le lien Spotify de l'épisode sera ajouté.</p>
+      {% endif %}
+    </div>
+
+    <div class="texte">
+      {% if image %}
+      <figure class="couverture"><img src="{{ image }}" alt="{% if prenom %}{{ prenom }}{% endif %}"></figure>
+      {% endif %}
+
+      {% if content | texteBrut %}
+      <h2>{% if prenom %}{{ prenom }} en quelques mots{% else %}Son parcours{% endif %}</h2>
+      {{ content | safe }}
+      {% endif %}
+
+      {% if moments and moments.length %}
+      <h2>Les moments clés</h2>
+      <ol class="moments">
+        {% for m in moments %}
+        <li><span class="temps">{{ m.temps }}</span><span>{{ m.sujet }}</span></li>
+        {% endfor %}
+      </ol>
+      {% endif %}
+
+      {% if citations and citations.length %}
+      <h2>Les phrases à retenir</h2>
+      <div class="citations">
+        {% for c in citations %}
+        <figure class="citation"><blockquote>{{ c }}</blockquote></figure>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <p class="liens-episode">
+        {% if spotify %}<a href="{{ spotify }}">Écouter sur Spotify</a>{% endif %}
+        {% if instagram %}<a href="{{ instagram }}">Voir la publication Instagram</a>{% endif %}
+      </p>
+    </div>
+
+    {% include "voisins.njk" %}
+  </div>
+</article>
+{% endblock %}

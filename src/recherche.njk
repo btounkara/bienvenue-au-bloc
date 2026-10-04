@@ -3,7 +3,8 @@ permalink: /recherche.json
 eleventyExcludeFromCollections: true
 ---
 [
-{%- for article in collections.articles %}
-  {{ { url: article.url, texte: (article.data.title + " " + article.data.resume + " " + article.data.categorie + " " + (article.content | texteBrut)) } | dump | safe }}{% if not loop.last %},{% endif %}
+{%- for p in collections.publications %}
+  {%- set d = p.data %}
+  {{ { url: p.url, texte: [d.title, d.resume, d.rubrique, d.prenom, d.metier, p.content | texteBrut, (d.citations or []) | join(" "), (d.moments or []) | join(" ", "sujet"), d.situation, d.deroulement, d.pourquoi, d.appris, d.reflexe] | join(" ") } | dump | safe }}{% if not loop.last %},{% endif %}
 {%- endfor %}
 ]

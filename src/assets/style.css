@@ -53,7 +53,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--corail); outlin
 
 /* Sections */
 section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
-#articles { padding-top: clamp(1rem, 2vw, 1.5rem); }
+#publications { padding-top: clamp(1rem, 2vw, 1.5rem); }
 .titre-section { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
 .titre-section h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 500; letter-spacing: -.01em; }
 .titre-section p { margin: 0; font-size: .9rem; color: var(--rose-doux); }
@@ -184,3 +184,45 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 @media (max-width: 760px) {
   .couverture { float: none; width: 100%; margin: 0 0 1.5rem; }
 }
+
+/* ---- Portraits et erreurs ---- */
+.ancre { display: block; position: relative; top: -1rem; }
+.badge { display: inline-block; margin-left: .4rem; padding: 0 .5rem; border-radius: 999px; background: var(--corail); color: var(--nuit); font-size: .7rem; letter-spacing: .04em; vertical-align: middle; }
+
+/* Les deux rubriques en tête de la page d'accueil */
+.rubriques { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.25rem; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+.rubrique { display: grid; gap: .4rem; align-content: start; padding: 1.4rem 1.6rem; border: 1px solid var(--trait); border-radius: 6px; text-decoration: none; transition: border-color .2s; }
+.rubrique:hover { border-color: var(--rose); }
+.rubrique strong { font-size: 1.35rem; font-weight: 500; }
+.rubrique span { color: var(--rose-doux); font-size: .95rem; }
+.rubrique em { font-style: normal; font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; color: var(--corail); margin-top: .3rem; }
+.carte-erreur .illus { background: #FFE6E3; }
+
+/* Appel à témoigner */
+.participer { border-top: 1px solid var(--trait); }
+.participer .enveloppe { display: grid; gap: 1rem; justify-items: start; }
+.participer h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 500; }
+.participer p { margin: 0; max-width: var(--mesure); color: var(--rose-doux); }
+.contacts { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: .5rem; }
+.bouton { display: inline-block; padding: .7rem 1.4rem; border-radius: 999px; background: var(--rose); color: var(--nuit); text-decoration: none; font-weight: 500; }
+.bouton:hover { background: var(--corail); }
+.courriel { color: var(--rose-doux); }
+
+/* Page d'un portrait */
+.ecoute { margin-top: 2rem; max-width: 48rem; }
+.lecteur { display: block; border: 0; border-radius: 12px; }
+.attente { margin: 0; padding: 1.5rem; border: 1px dashed var(--trait); border-radius: 12px; color: var(--rose-doux); }
+.texte .moments { list-style: none; padding: 0; gap: 0; }
+.texte .moments li { display: flex; gap: 1.25rem; padding: .7rem 0; border-bottom: 1px solid var(--trait); }
+.texte .moments li:first-child { border-top: 1px solid var(--trait); }
+.moments .temps { flex: none; min-width: 3.5rem; color: var(--corail); font-weight: 700; font-variant-numeric: tabular-nums; }
+.citations { display: grid; gap: 1.5rem; margin: 1.5rem 0; }
+.citation { margin: 0; }
+.texte .citation blockquote { display: block; margin: 0; padding: 0 0 0 1.5rem; background: none; border-left: 3px solid var(--corail); border-radius: 0; color: var(--rose); font-size: clamp(1.2rem, 2.2vw, 1.5rem); line-height: 1.4; }
+.texte .citation blockquote::before { content: none; }
+.liens-episode { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-top: 2.5rem; }
+
+/* Page d'une erreur */
+.bienveillance { padding: 1rem 1.25rem; border: 1px solid var(--trait); border-radius: 6px; font-style: italic; color: var(--rose-doux) !important; }
+.texte blockquote.reflexe::before { content: "Le réflexe à retenir"; }
+.texte blockquote.reflexe p { font-size: 1.15rem; }
