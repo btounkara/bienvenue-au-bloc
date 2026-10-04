@@ -5,7 +5,7 @@ media:
 
 content:
   - name: portraits
-    label: Ceux qui font le bloc
+    label: "Ceux qui font le bloc"
     type: collection
     path: src/portraits
     extension: md
@@ -20,61 +20,61 @@ content:
         order: desc
     fields:
       - name: title
-        label: Titre (ex. Camille, IADE : « Au bloc, on ne travaille jamais seule »)
+        label: "Titre (ex. Camille, IADE : « Au bloc, on ne travaille jamais seule »)"
         type: string
         required: true
       - name: date
-        label: Date de publication
+        label: "Date de publication"
         type: date
         required: true
       - name: prenom
-        label: Prénom de la personne
+        label: "Prénom de la personne"
         type: string
       - name: metier
-        label: Métier (ex. IBODE, IADE, chirurgien, aide-soignante…)
+        label: "Métier (ex. IBODE, IADE, chirurgien, aide-soignante…)"
         type: string
         required: true
       - name: resume
-        label: Résumé (2 lignes affichées sur la page d'accueil)
+        label: "Résumé (2 lignes affichées sur la page d'accueil)"
         type: text
         required: true
       - name: image
-        label: Photo ou illustration (facultative)
+        label: "Photo ou illustration (facultative)"
         type: image
       - name: spotify
-        label: Lien Spotify de l'épisode (Partager > Copier le lien de l'épisode)
+        label: "Lien Spotify de l'épisode (Partager > Copier le lien de l'épisode)"
         type: string
       - name: duree
-        label: Durée de l'interview, en minutes
+        label: "Durée de l'interview, en minutes"
         type: number
       - name: body
-        label: Présentation de la personne (son parcours en quelques lignes)
+        label: "Présentation de la personne (son parcours en quelques lignes)"
         type: rich-text
       - name: moments
-        label: Les moments clés
+        label: "Les moments clés"
         type: object
         list: true
         fields:
           - name: temps
-            label: Minutage (ex. 04:30)
+            label: "Minutage (ex. 04:30)"
             type: string
           - name: sujet
-            label: De quoi on parle
+            label: "De quoi on parle"
             type: string
       - name: citations
-        label: Les phrases à retenir
+        label: "Les phrases à retenir"
         type: text
         list: true
       - name: instagram
-        label: Lien de la publication Instagram (facultatif)
+        label: "Lien de la publication Instagram (facultatif)"
         type: string
       - name: brouillon
-        label: Brouillon (cochée = invisible sur le site)
+        label: "Brouillon (cochée = invisible sur le site)"
         type: boolean
         default: true
 
   - name: erreurs
-    label: Si c'était à refaire
+    label: "Si c'était à refaire"
     type: collection
     path: src/erreurs
     extension: md
@@ -89,97 +89,97 @@ content:
         order: desc
     fields:
       - name: title
-        label: Titre (ex. Le compte des compresses transmis trop vite)
+        label: "Titre (ex. Le compte des compresses transmis trop vite)"
         type: string
         required: true
       - name: date
-        label: Date de publication
+        label: "Date de publication"
         type: date
         required: true
       - name: metier
-        label: Qui témoigne, sans nom (ex. IBODE, 2 ans d'expérience)
+        label: "Qui témoigne, sans nom (ex. IBODE, 2 ans d'expérience)"
         type: string
       - name: resume
-        label: Résumé (2 lignes affichées sur la page d'accueil)
+        label: "Résumé (2 lignes affichées sur la page d'accueil)"
         type: text
         required: true
       - name: image
-        label: Illustration (facultative)
+        label: "Illustration (facultative)"
         type: image
       - name: situation
-        label: La situation (laissez une ligne vide entre deux paragraphes)
+        label: "La situation (laissez une ligne vide entre deux paragraphes)"
         type: text
       - name: deroulement
-        label: Ce qui s'est passé
+        label: "Ce qui s'est passé"
         type: text
       - name: pourquoi
-        label: Pourquoi c'est arrivé
+        label: "Pourquoi c'est arrivé"
         type: text
       - name: appris
-        label: Ce que j'en ai appris
+        label: "Ce que j'en ai appris"
         type: text
       - name: reflexe
-        label: Le réflexe à retenir (une ou deux phrases, dans l'encadré rose)
+        label: "Le réflexe à retenir (une ou deux phrases, dans l'encadré rose)"
         type: text
       - name: instagram
-        label: Lien de la publication Instagram (facultatif)
+        label: "Lien de la publication Instagram (facultatif)"
         type: string
       - name: brouillon
-        label: Brouillon (cochée = invisible sur le site)
+        label: "Brouillon (cochée = invisible sur le site)"
         type: boolean
         default: true
 
   - name: accueil
-    label: Page d'accueil
+    label: "Page d'accueil"
     type: file
     path: src/_data/site.json
     format: json
     fields:
       - name: nom
-        label: Nom du blog
+        label: "Nom du blog"
         type: string
       - name: slogan
-        label: Slogan (à côté du nom, en haut)
+        label: "Slogan (à côté du nom, en haut)"
         type: string
       - name: description
-        label: Description pour Google
+        label: "Description pour Google"
         type: text
       - name: banniere
-        label: Grande image d'accueil
+        label: "Grande image d'accueil"
         type: image
       - name: accroche_titre
-        label: Grand titre (mettez des *étoiles* autour des mots à colorer en rose)
+        label: "Grand titre (mettez des *étoiles* autour des mots à colorer en rose)"
         type: string
       - name: accroche_texte
-        label: Phrase sous le grand titre
+        label: "Phrase sous le grand titre"
         type: text
       - name: accroche_signature
-        label: Petite ligne sous la phrase
+        label: "Petite ligne sous la phrase"
         type: string
       - name: participer_titre
-        label: Titre de l'appel à témoigner
+        label: "Titre de l'appel à témoigner"
         type: string
       - name: participer_texte
-        label: Texte de l'appel à témoigner
+        label: "Texte de l'appel à témoigner"
         type: text
       - name: instagram
-        label: Lien de votre compte Instagram
+        label: "Lien de votre compte Instagram"
         type: string
       - name: email
-        label: Adresse e-mail de contact (facultative, elle sera visible par tous)
+        label: "Adresse e-mail de contact (facultative, elle sera visible par tous)"
         type: string
       - name: presentation_titre
-        label: Titre de la présentation
+        label: "Titre de la présentation"
         type: string
       - name: portrait
-        label: Image de la présentation
+        label: "Image de la présentation"
         type: image
       - name: presentation
-        label: Texte de la présentation
+        label: "Texte de la présentation"
         type: rich-text
       - name: signature
-        label: Votre signature
+        label: "Votre signature"
         type: string
       - name: avertissement
-        label: Phrase en bas de page
+        label: "Phrase en bas de page"
         type: text
