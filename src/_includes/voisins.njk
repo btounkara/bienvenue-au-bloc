@@ -1,5 +1,5 @@
 {#- Liens vers la publication plus récente et plus ancienne de la même rubrique -#}
-{% set liste = collections.portraits if rubrique == "Les portraits du bloc" else collections.erreurs %}
+{% set liste = collections.portraits if rubrique == "Ceux qui font le bloc" else collections.erreurs %}
 {% set plusRecent = liste | getPreviousCollectionItem(page) %}
 {% set plusAncien = liste | getNextCollectionItem(page) %}
 {% if plusRecent or plusAncien %}

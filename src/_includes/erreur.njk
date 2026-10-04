@@ -3,9 +3,9 @@
 {% block principal %}
 <article class="article">
   <div class="enveloppe">
-    <a class="retour" href="/#erreurs">← Toutes les erreurs</a>
+    <a class="retour" href="/#refaire">← Toutes les expériences</a>
     <header>
-      <span class="meta">L'erreur à ne plus commettre{% if brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
+      <span class="meta">Si c'était à refaire{% if brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
       <h1>{{ title }}</h1>
       <p class="infos">Témoignage anonyme{% if metier %} · {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time></p>
     </header>
@@ -15,7 +15,7 @@
       <figure class="couverture"><img src="{{ image }}" alt=""></figure>
       {% endif %}
 
-      <p class="bienveillance">Cette erreur aurait pu arriver à n'importe qui. Merci à la collègue qui a accepté de la partager pour que d'autres ne la commettent pas.</p>
+      <p class="bienveillance">Cette situation aurait pu arriver à n'importe qui. Merci à la collègue qui a accepté de la partager pour que d'autres en tirent profit.</p>
 
       {% if situation %}<h2>La situation</h2>{{ situation | paragraphes | safe }}{% endif %}
       {% if deroulement %}<h2>Ce qui s'est passé</h2>{{ deroulement | paragraphes | safe }}{% endif %}

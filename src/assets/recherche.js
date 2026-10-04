@@ -68,14 +68,14 @@
     if (bouton) choisirTheme(bouton.dataset.theme);
   });
 
-  // Les liens "#portraits" et "#erreurs" (menu, encarts) ouvrent la bonne rubrique
+  // Les liens "#portraits" et "#refaire" (menu, encarts) ouvrent la bonne rubrique
   const depuisAncre = () => {
-    if (location.hash === "#portraits") choisirTheme("Les portraits du bloc");
-    else if (location.hash === "#erreurs") choisirTheme("L'erreur à ne plus commettre");
+    if (location.hash === "#portraits") choisirTheme("Ceux qui font le bloc");
+    else if (location.hash === "#refaire") choisirTheme("Si c'était à refaire");
   };
   window.addEventListener("hashchange", depuisAncre);
   document.addEventListener("click", (e) => {
-    if (e.target.closest('a[href$="#portraits"], a[href$="#erreurs"]')) setTimeout(depuisAncre);
+    if (e.target.closest('a[href$="#portraits"], a[href$="#refaire"]')) setTimeout(depuisAncre);
   });
   depuisAncre();
 })();

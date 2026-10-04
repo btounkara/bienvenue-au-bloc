@@ -22,17 +22,17 @@ permalink: /
 {% block principal %}
 {% set total = collections.publications.length %}
 <section id="publications">
-  <span id="portraits" class="ancre"></span><span id="erreurs" class="ancre"></span>
+  <span id="portraits" class="ancre"></span><span id="refaire" class="ancre"></span>
   <div class="enveloppe">
     <div class="rubriques">
-      <a class="rubrique" href="#portraits" data-filtre="Les portraits du bloc">
-        <strong>Les portraits du bloc</strong>
+      <a class="rubrique" href="#portraits" data-filtre="Ceux qui font le bloc">
+        <strong>Ceux qui font le bloc</strong>
         <span>Des professionnels du bloc racontent leur métier, en audio.</span>
         <em>{{ collections.portraits.length }} portrait{% if collections.portraits.length > 1 %}s{% endif %}</em>
       </a>
-      <a class="rubrique" href="#erreurs" data-filtre="L'erreur à ne plus commettre">
-        <strong>L'erreur à ne plus commettre</strong>
-        <span>Une collègue partage anonymement une erreur, pour que d'autres ne la refassent pas.</span>
+      <a class="rubrique" href="#refaire" data-filtre="Si c'était à refaire">
+        <strong>Si c'était à refaire</strong>
+        <span>Une collègue raconte anonymement une situation qu'elle vivrait autrement aujourd'hui, pour que d'autres en profitent.</span>
         <em>{{ collections.erreurs.length }} retour{% if collections.erreurs.length > 1 %}s{% endif %} d'expérience</em>
       </a>
     </div>
@@ -53,8 +53,8 @@ permalink: /
 
     <div class="themes" role="group" aria-label="Filtrer par rubrique" id="themes">
       <button type="button" aria-pressed="true" data-theme="Tous">Tout</button>
-      <button type="button" aria-pressed="false" data-theme="Les portraits du bloc">Les portraits du bloc</button>
-      <button type="button" aria-pressed="false" data-theme="L'erreur à ne plus commettre">L'erreur à ne plus commettre</button>
+      <button type="button" aria-pressed="false" data-theme="Ceux qui font le bloc">Ceux qui font le bloc</button>
+      <button type="button" aria-pressed="false" data-theme="Si c'était à refaire">Si c'était à refaire</button>
     </div>
     {% endif %}
 

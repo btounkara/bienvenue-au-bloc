@@ -5,7 +5,7 @@ media:
 
 content:
   - name: portraits
-    label: Les portraits du bloc
+    label: Ceux qui font le bloc
     type: collection
     path: src/portraits
     extension: md
@@ -74,7 +74,7 @@ content:
         default: true
 
   - name: erreurs
-    label: L'erreur à ne plus commettre
+    label: Si c'était à refaire
     type: collection
     path: src/erreurs
     extension: md

@@ -2,10 +2,10 @@ const montrerBrouillons = process.env.ELEVENTY_RUN_MODE === "serve";
 
 export default {
   layout: "erreur.njk",
-  rubrique: "L'erreur à ne plus commettre",
+  rubrique: "Si c'était à refaire",
   eleventyComputed: {
     // Un brouillon n'est pas mis en ligne
     permalink: (data) =>
-      data.brouillon && !montrerBrouillons ? false : `/erreurs/${data.page.fileSlug}/`,
+      data.brouillon && !montrerBrouillons ? false : `/si-c-etait-a-refaire/${data.page.fileSlug}/`,
   },
 };

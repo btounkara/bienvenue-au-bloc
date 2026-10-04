@@ -6,7 +6,7 @@
   <div class="enveloppe">
     <a class="retour" href="/#portraits">← Tous les portraits</a>
     <header>
-      <span class="meta">Les portraits du bloc{% if brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
+      <span class="meta">Ceux qui font le bloc{% if brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
       <h1>{{ title }}</h1>
       <p class="infos">{% if prenom %}{{ prenom }}{% endif %}{% if metier %}, {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time>{% if duree %} · {{ duree }} min d'écoute{% endif %}</p>
     </header>
