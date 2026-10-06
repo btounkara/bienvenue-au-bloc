@@ -4,7 +4,7 @@ import { HtmlBasePlugin } from "@11ty/eleventy";
 const montrerBrouillons = process.env.ELEVENTY_RUN_MODE === "serve";
 
 export default function (eleventyConfig) {
-  // Sur GitHub Pages le site vit dans un sous-dossier (/bienvenue-au-bloc/) :
+  // Préfixe d'adresse fourni par GitHub Pages au build (vide sur www.bienvenueaubloc.fr) :
   // ce plugin corrige automatiquement tous les liens et images.
   eleventyConfig.addPlugin(HtmlBasePlugin);
 
