@@ -22,7 +22,7 @@ permalink: /
 {% block principal %}
 {% set total = collections.publications.length %}
 <section id="publications">
-  <span id="portraits" class="ancre"></span><span id="refaire" class="ancre"></span>
+  <span id="portraits" class="ancre"></span><span id="refaire" class="ancre"></span><span id="premiere-fois" class="ancre"></span>
   <div class="enveloppe">
     <div class="rubriques">
       <a class="rubrique" href="#portraits" data-filtre="Ceux qui font le bloc">
@@ -34,6 +34,11 @@ permalink: /
         <strong>Si c'était à refaire</strong>
         <span>Une collègue raconte anonymement une situation qu'elle vivrait autrement aujourd'hui, pour que d'autres en profitent.</span>
         <em>{{ collections.erreurs.length }} retour{% if collections.erreurs.length > 1 %}s{% endif %} d'expérience</em>
+      </a>
+      <a class="rubrique" href="#premiere-fois" data-filtre="La première fois où j'ai…">
+        <strong>La première fois où j'ai…</strong>
+        <span>Des professionnels racontent une première fois au bloc, ce qu'ils ont ressenti et ce qu'ils ont changé depuis.</span>
+        <em>{{ collections.premieresFois.length }} témoignage{% if collections.premieresFois.length > 1 %}s{% endif %}</em>
       </a>
     </div>
 
@@ -55,6 +60,7 @@ permalink: /
       <button type="button" aria-pressed="true" data-theme="Tous">Tout</button>
       <button type="button" aria-pressed="false" data-theme="Ceux qui font le bloc">Ceux qui font le bloc</button>
       <button type="button" aria-pressed="false" data-theme="Si c'était à refaire">Si c'était à refaire</button>
+      <button type="button" aria-pressed="false" data-theme="La première fois où j'ai…">La première fois où j'ai…</button>
     </div>
     {% endif %}
 

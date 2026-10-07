@@ -1,10 +1,10 @@
 {
   "nom": "BienvenueAuBloc",
   "slogan": "Ceux qui font le bloc prennent la parole",
-  "description": "Des portraits audio de professionnels du bloc opératoire et des retours d’expérience partagés anonymement, pour apprendre du vécu des autres.",
+  "description": "Des portraits audio de professionnels du bloc opératoire, des premières fois racontées et des retours d’expérience partagés, pour apprendre du vécu des autres.",
   "banniere": "/images/banniere.jpg",
   "accroche_titre": "Écoutez ceux qui *font vivre le bloc* au quotidien.",
-  "accroche_texte": "Des portraits audio de professionnels du bloc opératoire et des expériences partagées anonymement par des collègues, pour apprendre du vécu des autres.",
+  "accroche_texte": "Des portraits audio de professionnels du bloc opératoire, des premières fois racontées sans tabou et des expériences partagées anonymement par des collègues, pour apprendre du vécu des autres.",
   "accroche_signature": "À l’initiative d’une IBODE, pour les collègues",
   "presentation_titre": "Qui suis-je ?",
   "portrait": "/images/portrait.webp",
@@ -12,7 +12,7 @@
   "signature": "MTNK",
   "avertissement": "Les témoignages publiés ici sont personnels. Ils ne remplacent pas les protocoles de votre établissement.",
   "participer_titre": "Vous aussi, prenez la parole",
-  "participer_texte": "Vous travaillez au bloc et vous aimeriez raconter votre métier, ou partager anonymement une situation que vous vivriez autrement aujourd’hui ? Écrivez-moi, je vous recontacte.",
+  "participer_texte": "Vous travaillez au bloc et vous aimeriez raconter votre métier, une de vos premières fois, ou partager anonymement une situation que vous vivriez autrement aujourd’hui ? Écrivez-moi, je vous recontacte.",
   "instagram": "",
   "email": ""
 }

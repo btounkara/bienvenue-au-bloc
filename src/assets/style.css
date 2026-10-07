@@ -197,6 +197,7 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 .rubrique span { color: var(--rose-doux); font-size: .95rem; }
 .rubrique em { font-style: normal; font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; color: var(--corail); margin-top: .3rem; }
 .carte-erreur .illus { background: #FFE6E3; }
+.carte-premiere .illus { background: #F3EEFA; }
 
 /* Appel à témoigner */
 .participer { border-top: 1px solid var(--trait); }
@@ -226,3 +227,7 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 .bienveillance { padding: 1rem 1.25rem; border: 1px solid var(--trait); border-radius: 6px; font-style: italic; color: var(--rose-doux) !important; }
 .texte blockquote.reflexe::before { content: "Le réflexe à retenir"; }
 .texte blockquote.reflexe p { font-size: 1.15rem; }
+
+/* Page d'une première fois */
+.texte blockquote.conseil::before { content: "Mon conseil pour votre première fois"; }
+.texte blockquote.conseil p { font-size: 1.15rem; }

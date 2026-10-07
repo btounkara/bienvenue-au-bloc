@@ -129,6 +129,71 @@ content:
         type: boolean
         default: true
 
+  - name: premieres-fois
+    label: "La première fois où j'ai…"
+    type: collection
+    path: src/premieres-fois
+    extension: md
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title, metier, date, brouillon]
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: "Titre (ex. La première fois où j'ai instrumenté seule)"
+        type: string
+        required: true
+      - name: date
+        label: "Date de publication"
+        type: date
+        required: true
+      - name: prenom
+        label: "Prénom (laissez vide pour un témoignage anonyme)"
+        type: string
+      - name: metier
+        label: "Métier et expérience (ex. IBODE, 6 ans de bloc)"
+        type: string
+      - name: resume
+        label: "Résumé (2 lignes affichées sur la page d'accueil)"
+        type: text
+        required: true
+      - name: image
+        label: "Illustration (facultative)"
+        type: image
+      - name: spotify
+        label: "Lien Spotify si le témoignage existe aussi en audio (facultatif)"
+        type: string
+      - name: duree
+        label: "Durée de l'audio, en minutes (facultatif)"
+        type: number
+      - name: recit
+        label: "Ce jour-là : le récit (laissez une ligne vide entre deux paragraphes)"
+        type: text
+      - name: ressenti
+        label: "Ce que j'ai ressenti"
+        type: text
+      - name: recul
+        label: "Avec le recul (pour dédramatiser)"
+        type: text
+      - name: changements
+        label: "Ce que j'ai changé depuis"
+        type: text
+      - name: conseil
+        label: "Mon conseil pour votre première fois (une ou deux phrases, dans l'encadré rose)"
+        type: text
+      - name: instagram
+        label: "Lien de la publication Instagram (facultatif)"
+        type: string
+      - name: brouillon
+        label: "Brouillon (cochée = invisible sur le site)"
+        type: boolean
+        default: true
+
   - name: accueil
     label: "Page d'accueil"
     type: file

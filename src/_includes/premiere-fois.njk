@@ -1,0 +1,48 @@
+{% extends "base.njk" %}
+
+{% block principal %}
+{% set lecteur = spotify | lecteurSpotify %}
+<article class="article">
+  <div class="enveloppe">
+    <a class="retour" href="/#premiere-fois">← Toutes les premières fois</a>
+    <header>
+      <span class="meta">La première fois où j'ai…{% if brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
+      <h1>{{ title }}</h1>
+      <p class="infos">{% if prenom %}{{ prenom }}{% else %}Témoignage anonyme{% endif %}{% if metier %} · {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time>{% if duree %} · {{ duree }} min d'écoute{% endif %}</p>
+    </header>
+
+    {% if spotify %}
+    <div class="ecoute">
+      {% if lecteur %}
+      <iframe class="lecteur" src="{{ lecteur }}" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Écouter le témoignage sur Spotify"></iframe>
+      {% else %}
+      <a class="bouton" href="{{ spotify }}">Écouter le témoignage</a>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="texte">
+      {% if image %}
+      <figure class="couverture"><img src="{{ image }}" alt=""></figure>
+      {% endif %}
+
+      <p class="bienveillance">Tout le monde a eu une première fois. Celle-ci est racontée pour vous rappeler que l'appréhension est normale, et qu'elle passe.</p>
+
+      {% if recit %}<h2>Ce jour-là</h2>{{ recit | paragraphes | safe }}{% endif %}
+      {% if ressenti %}<h2>Ce que j'ai ressenti</h2>{{ ressenti | paragraphes | safe }}{% endif %}
+      {% if recul %}<h2>Avec le recul</h2>{{ recul | paragraphes | safe }}{% endif %}
+      {% if changements %}<h2>Ce que j'ai changé depuis</h2>{{ changements | paragraphes | safe }}{% endif %}
+
+      {% if conseil %}
+      <blockquote class="conseil">{{ conseil | paragraphes | safe }}</blockquote>
+      {% endif %}
+
+      {% if instagram %}
+      <p class="liens-episode"><a href="{{ instagram }}">Voir la publication Instagram</a></p>
+      {% endif %}
+    </div>
+
+    {% include "voisins.njk" %}
+  </div>
+</article>
+{% endblock %}

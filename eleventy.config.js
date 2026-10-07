@@ -22,8 +22,11 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addCollection("portraits", (api) => publiees(api, "portraits"));
   eleventyConfig.addCollection("erreurs", (api) => publiees(api, "erreurs"));
+  eleventyConfig.addCollection("premieresFois", (api) => publiees(api, "premieres-fois"));
   eleventyConfig.addCollection("publications", (api) =>
-    [...publiees(api, "portraits"), ...publiees(api, "erreurs")].sort((a, b) => b.date - a.date)
+    [...publiees(api, "portraits"), ...publiees(api, "erreurs"), ...publiees(api, "premieres-fois")].sort(
+      (a, b) => b.date - a.date
+    )
   );
 
   eleventyConfig.addFilter("dateFr", (date) =>
