@@ -60,6 +60,16 @@ export default function (eleventyConfig) {
     return m ? `https://open.spotify.com/embed/${m[1]}/${m[2]}?utm_source=generator` : "";
   });
 
+  // Lien YouTube (watch, youtu.be, shorts, live, embed) -> identifiant de la vidéo
+  const idYoutube = (lien = "") => {
+    const m = String(lien).match(
+      /(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|shorts\/|live\/|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/
+    );
+    return m ? m[1] : "";
+  };
+  eleventyConfig.addFilter("idYoutube", idYoutube);
+  eleventyConfig.addFilter("youtubeVertical", (lien = "") => /youtube\.com\/shorts\//.test(String(lien)));
+
   return {
     dir: { input: "src", includes: "_includes", data: "_data", output: "_site" },
     markdownTemplateEngine: false,

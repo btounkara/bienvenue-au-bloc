@@ -12,9 +12,12 @@
 {%- macro carte(p, enUne) -%}
 <article class="carte{% if enUne %} une{% endif %}{% if p.data.rubrique == 'Ceux qui font le bloc' %} carte-portrait{% elif p.data.rubrique == "Si c'était à refaire" %} carte-erreur{% else %} carte-premiere{% endif %}" data-theme="{{ p.data.rubrique }}" data-url="{{ p.url }}">
   <a href="{{ p.url }}">
-    <div class="illus{% if p.data.image %} photo{% endif %}">
+    {%- set video = p.data.youtube | idYoutube %}
+    <div class="illus{% if p.data.image or video %} photo{% endif %}">
       {%- if p.data.image %}
       <img src="{{ p.data.image }}" alt="" loading="lazy">
+      {%- elif video %}
+      <img src="https://i.ytimg.com/vi/{{ video }}/hqdefault.jpg" alt="" loading="lazy">
       {%- else %}
       {{ dessin(p.data.rubrique) }}
       {%- endif %}
@@ -23,7 +26,7 @@
       <span class="meta">{{ p.data.rubrique }}{% if p.data.metier %} · {{ p.data.metier }}{% endif %}{% if p.data.brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
       <h3>{{ p.data.title }}</h3>
       <p>{{ p.data.resume }}</p>
-      <span class="duree">{{ p.date | dateFr }}{% if p.data.duree %} · {{ p.data.duree }} min d'écoute{% endif %}</span>
+      <span class="duree">{{ p.date | dateFr }}{% if p.data.youtube %} · Vidéo{% endif %}{% if p.data.duree %} · {{ p.data.duree }} min{% if not p.data.youtube %} d'écoute{% endif %}{% endif %}</span>
     </div>
   </a>
 </article>

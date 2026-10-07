@@ -1,0 +1,26 @@
+{#- Vidéo YouTube et/ou audio Spotify en haut d'une publication.
+    attente : message affiché quand aucun lien n'est encore renseigné (vide = rien). -#}
+{% set video = youtube | idYoutube %}
+{% set lecteur = spotify | lecteurSpotify %}
+{% if youtube or spotify or attente %}
+<div class="ecoute">
+  {% if video %}
+  <div class="video{% if youtube | youtubeVertical %} verticale{% endif %}">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ video }}?rel=0" title="Regarder la vidéo : {{ title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+  </div>
+  {% elif youtube %}
+  <a class="bouton" href="{{ youtube }}">Regarder la vidéo</a>
+  {% endif %}
+
+  {% if lecteur %}
+  {% if video %}<p class="aussi">Vous préférez écouter ? La version audio :</p>{% endif %}
+  <iframe class="lecteur" src="{{ lecteur }}" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Écouter sur Spotify : {{ title }}"></iframe>
+  {% elif spotify %}
+  <a class="bouton" href="{{ spotify }}">Écouter sur Spotify</a>
+  {% endif %}
+
+  {% if not youtube and not spotify %}
+  <p class="attente">{{ attente }}</p>
+  {% endif %}
+</div>
+{% endif %}

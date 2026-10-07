@@ -231,3 +231,10 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 /* Page d'une première fois */
 .texte blockquote.conseil::before { content: "Mon conseil pour votre première fois"; }
 .texte blockquote.conseil p { font-size: 1.15rem; }
+
+/* Vidéo YouTube */
+.video { position: relative; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 12px; overflow: hidden; background: var(--nuit); }
+.video.verticale { aspect-ratio: 9 / 16; max-width: 22rem; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.ecoute { display: grid; gap: 1rem; }
+.aussi { margin: .5rem 0 0; font-size: .9rem; color: var(--rose-doux); }

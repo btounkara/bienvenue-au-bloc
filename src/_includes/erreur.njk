@@ -7,8 +7,10 @@
     <header>
       <span class="meta">Si c'était à refaire{% if brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
       <h1>{{ title }}</h1>
-      <p class="infos">Témoignage anonyme{% if metier %} · {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time></p>
+      <p class="infos">Témoignage anonyme{% if metier %} · {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time>{% if duree %} · {{ duree }} min{% if youtube %} de vidéo{% else %} d'écoute{% endif %}{% endif %}</p>
     </header>
+
+    {% include "media.njk" %}
 
     <div class="texte">
       {% if image %}

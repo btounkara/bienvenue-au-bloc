@@ -1,25 +1,17 @@
 {% extends "base.njk" %}
 
 {% block principal %}
-{% set lecteur = spotify | lecteurSpotify %}
 <article class="article">
   <div class="enveloppe">
     <a class="retour" href="/#portraits">← Tous les portraits</a>
     <header>
       <span class="meta">Ceux qui font le bloc{% if brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
       <h1>{{ title }}</h1>
-      <p class="infos">{% if prenom %}{{ prenom }}{% endif %}{% if metier %}, {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time>{% if duree %} · {{ duree }} min d'écoute{% endif %}</p>
+      <p class="infos">{% if prenom %}{{ prenom }}{% endif %}{% if metier %}, {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time>{% if duree %} · {{ duree }} min{% if youtube %} de vidéo{% else %} d'écoute{% endif %}{% endif %}</p>
     </header>
 
-    <div class="ecoute">
-      {% if lecteur %}
-      <iframe class="lecteur" src="{{ lecteur }}" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Écouter l'interview sur Spotify"></iframe>
-      {% elif spotify %}
-      <a class="bouton" href="{{ spotify }}">Écouter l'interview</a>
-      {% else %}
-      <p class="attente">Le lecteur audio apparaîtra ici dès que le lien Spotify de l'épisode sera ajouté.</p>
-      {% endif %}
-    </div>
+    {% set attente = "La vidéo ou l'audio apparaîtra ici dès que le lien YouTube ou Spotify sera ajouté." %}
+    {% include "media.njk" %}
 
     <div class="texte">
       {% if image %}
@@ -50,6 +42,7 @@
       {% endif %}
 
       <p class="liens-episode">
+        {% if youtube %}<a href="{{ youtube }}">Voir sur YouTube</a>{% endif %}
         {% if spotify %}<a href="{{ spotify }}">Écouter sur Spotify</a>{% endif %}
         {% if instagram %}<a href="{{ instagram }}">Voir la publication Instagram</a>{% endif %}
       </p>

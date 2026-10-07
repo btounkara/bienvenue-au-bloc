@@ -41,11 +41,14 @@ content:
       - name: image
         label: "Photo ou illustration (facultative)"
         type: image
+      - name: youtube
+        label: "Lien YouTube de la vidéo (facultatif) - copiez l'adresse de la vidéo"
+        type: string
       - name: spotify
-        label: "Lien Spotify de l'épisode (Partager > Copier le lien de l'épisode)"
+        label: "Lien Spotify de l'épisode, facultatif (Partager > Copier le lien de l'épisode)"
         type: string
       - name: duree
-        label: "Durée de l'interview, en minutes"
+        label: "Durée de la vidéo ou de l'audio, en minutes"
         type: number
       - name: body
         label: "Présentation de la personne (son parcours en quelques lignes)"
@@ -106,6 +109,15 @@ content:
       - name: image
         label: "Illustration (facultative)"
         type: image
+      - name: youtube
+        label: "Lien YouTube de la vidéo (facultatif) - copiez l'adresse de la vidéo"
+        type: string
+      - name: spotify
+        label: "Lien Spotify si le témoignage existe aussi en audio (facultatif)"
+        type: string
+      - name: duree
+        label: "Durée de la vidéo ou de l'audio, en minutes (facultatif)"
+        type: number
       - name: situation
         label: "La situation (laissez une ligne vide entre deux paragraphes)"
         type: text
@@ -165,11 +177,14 @@ content:
       - name: image
         label: "Illustration (facultative)"
         type: image
+      - name: youtube
+        label: "Lien YouTube de la vidéo (facultatif) - copiez l'adresse de la vidéo"
+        type: string
       - name: spotify
         label: "Lien Spotify si le témoignage existe aussi en audio (facultatif)"
         type: string
       - name: duree
-        label: "Durée de l'audio, en minutes (facultatif)"
+        label: "Durée de la vidéo ou de l'audio, en minutes (facultatif)"
         type: number
       - name: recit
         label: "Ce jour-là : le récit (laissez une ligne vide entre deux paragraphes)"
