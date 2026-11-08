@@ -204,7 +204,7 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 .participer .enveloppe { display: grid; gap: 1rem; justify-items: start; }
 .participer h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 500; }
 .participer p { margin: 0; max-width: var(--mesure); color: var(--rose-doux); }
-.questionnaires { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.25rem; width: 100%; margin-top: .75rem; }
+.questionnaires { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1.25rem; width: 100%; margin-top: .75rem; }
 .questionnaire { display: grid; gap: .6rem; align-content: start; justify-items: start; padding: 1.4rem 1.6rem; background: var(--nuit); border-radius: 8px; }
 .questionnaire strong { font-size: 1.25rem; font-weight: 500; }
 .questionnaire span { color: var(--rose-doux); font-size: .95rem; margin-bottom: .4rem; }
