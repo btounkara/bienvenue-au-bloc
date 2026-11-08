@@ -77,6 +77,24 @@ permalink: /
   <div class="enveloppe">
     <h2>{{ site.participer_titre }}</h2>
     <p>{{ site.participer_texte }}</p>
+    {% if site.questionnaire_premiere_fois or site.questionnaire_refaire %}
+    <div class="questionnaires">
+      {% if site.questionnaire_premiere_fois %}
+      <div class="questionnaire">
+        <strong>La première fois où j'ai…</strong>
+        <span>Racontez une de vos premières fois au bloc et ce que vous avez ressenti.</span>
+        <a class="bouton" href="{{ site.questionnaire_premiere_fois }}" target="_blank" rel="noopener">Répondre au questionnaire</a>
+      </div>
+      {% endif %}
+      {% if site.questionnaire_refaire %}
+      <div class="questionnaire">
+        <strong>Si c'était à refaire</strong>
+        <span>Partagez une situation que vous vivriez autrement aujourd'hui. Vous pouvez rester anonyme.</span>
+        <a class="bouton" href="{{ site.questionnaire_refaire }}" target="_blank" rel="noopener">Répondre au questionnaire</a>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
     {% if site.email or site.instagram %}
     <div class="contacts">
       {% if site.instagram %}<a class="bouton" href="{{ site.instagram }}">Me contacter sur Instagram</a>{% endif %}

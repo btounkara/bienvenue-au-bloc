@@ -12,7 +12,9 @@
   "signature": "MTNK",
   "avertissement": "Les témoignages publiés ici sont personnels. Ils ne remplacent pas les protocoles de votre établissement.",
   "participer_titre": "Vous aussi, prenez la parole",
-  "participer_texte": "Vous travaillez au bloc et vous aimeriez raconter votre métier, une de vos premières fois, ou partager anonymement une situation que vous vivriez autrement aujourd’hui ? Écrivez-moi, je vous recontacte.",
+  "participer_texte": "Vous travaillez au bloc et vous aimeriez raconter une de vos premières fois, ou une situation que vous vivriez autrement aujourd’hui ? Répondez au questionnaire qui vous correspond, je vous recontacte.",
+  "questionnaire_premiere_fois": "https://forms.gle/chUPtaBjkqJYK2yy8",
+  "questionnaire_refaire": "https://forms.gle/QYarasUYQZMYzEBEA",
   "instagram": "",
   "email": ""
 }

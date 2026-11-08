@@ -237,6 +237,12 @@ content:
       - name: participer_texte
         label: "Texte de l'appel à témoigner"
         type: text
+      - name: questionnaire_premiere_fois
+        label: "Lien du questionnaire « La première fois où j'ai… » (laissez vide pour masquer le bouton)"
+        type: string
+      - name: questionnaire_refaire
+        label: "Lien du questionnaire « Si c'était à refaire » (laissez vide pour masquer le bouton)"
+        type: string
       - name: instagram
         label: "Lien de votre compte Instagram"
         type: string
