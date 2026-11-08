@@ -1,0 +1,75 @@
+{#- Article rédigé, commun à « La première fois où j'ai… » et « Si c'était à refaire » :
+    présentation de la personne (photo + son expérience), témoignage, mot de la fin de Margot,
+    photos des bonnes pratiques. Les réglages propres à chaque rubrique sont dans son fichier .11tydata.js -#}
+{% extends "base.njk" %}
+
+{% block principal %}
+<article class="article temoignage">
+  <div class="enveloppe">
+    <a class="retour" href="/#{{ ancre }}">← {{ retour }}</a>
+    <header>
+      <span class="meta">{{ rubrique }}{% if brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
+      <h1>{{ title }}</h1>
+      <p class="infos">{% if prenom %}{{ prenom }}{% else %}Témoignage anonyme{% endif %}{% if metier %} · {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time> · {{ [presentation, content, mot_de_la_fin] | join(" ") | dureeLecture }} min de lecture</p>
+    </header>
+
+    {% if photo or (presentation | texteBrut) %}
+    <section class="qui" aria-label="Qui témoigne">
+      {% if photo %}
+      <figure class="qui-photo"><img src="{{ photo }}" alt="{% if prenom %}{{ prenom }}{% else %}La personne qui témoigne{% endif %}"></figure>
+      {% endif %}
+      <div class="qui-texte">
+        <span class="qui-titre">{% if prenom %}{{ prenom }}{% else %}Qui témoigne ?{% endif %}{% if metier %}<em>{{ metier }}</em>{% endif %}</span>
+        {{ presentation | safe }}
+      </div>
+    </section>
+    {% endif %}
+
+    <div class="texte">
+      {% if image %}
+      <figure class="couverture"><img src="{{ image }}" alt=""></figure>
+      {% endif %}
+
+      <p class="bienveillance">{{ bienveillance }}</p>
+
+      {% if content | texteBrut %}
+      <h2>{{ titreTemoignage }}</h2>
+      {{ content | safe }}
+      {% endif %}
+    </div>
+
+    {% if mot_de_la_fin | texteBrut %}
+    <section class="mot-fin" aria-labelledby="mot-fin-titre">
+      <div class="mot-fin-entete">
+        <img src="{{ site.portrait }}" alt="" width="64" height="64">
+        <div>
+          <h2 id="mot-fin-titre">Le mot de la fin</h2>
+          <span>par {{ site.signature }}, IBODE</span>
+        </div>
+      </div>
+      <div class="mot-fin-texte">{{ mot_de_la_fin | safe }}</div>
+    </section>
+    {% endif %}
+
+    {% if photos and photos.length %}
+    <section class="bonnes-pratiques" aria-labelledby="bp-titre">
+      <h2 id="bp-titre">Les bonnes pratiques en images</h2>
+      <div class="galerie">
+        {% for p in photos %}{% if p.image %}
+        <figure>
+          <img src="{{ p.image }}" alt="{{ p.legende }}" loading="lazy">
+          {% if p.legende %}<figcaption>{{ p.legende }}</figcaption>{% endif %}
+        </figure>
+        {% endif %}{% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if instagram %}
+    <p class="liens-episode"><a href="{{ instagram }}">Voir la publication Instagram</a></p>
+    {% endif %}
+
+    {% include "voisins.njk" %}
+  </div>
+</article>
+{% endblock %}

@@ -54,6 +54,12 @@ export default function (eleventyConfig) {
     String(html).replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim()
   );
 
+  // Temps de lecture estimé (200 mots par minute)
+  eleventyConfig.addFilter("dureeLecture", (html = "") => {
+    const mots = String(html).replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.round(mots / 200));
+  });
+
   // Lien Spotify ("Partager > Copier le lien") -> adresse du lecteur intégré
   eleventyConfig.addFilter("lecteurSpotify", (lien = "") => {
     const m = String(lien).match(/open\.spotify\.com\/(?:intl-[a-z]+\/)?(episode|show)\/([A-Za-z0-9]+)/);

@@ -238,3 +238,42 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .ecoute { display: grid; gap: 1rem; }
 .aussi { margin: .5rem 0 0; font-size: .9rem; color: var(--rose-doux); }
+
+/* ---- Articles rédigés (première fois, si c'était à refaire) ---- */
+/* Qui témoigne : photo + son expérience au bloc */
+.qui { display: grid; grid-template-columns: minmax(0, 15rem) 1fr; gap: clamp(1.25rem, 3vw, 2.5rem); align-items: start; margin-top: 2.5rem; padding: clamp(1.25rem, 3vw, 2rem); background: var(--nuit); border-radius: 8px; }
+.qui > * { min-width: 0; }
+.qui-photo { margin: 0; border-radius: 6px; overflow: hidden; aspect-ratio: 4 / 5; max-width: 100%; }
+.qui-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.qui-titre { display: grid; gap: .15rem; margin-bottom: 1rem; font-size: 1.35rem; font-weight: 500; }
+.qui-titre em { font-style: normal; font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; color: var(--corail); }
+.qui-texte p { margin: 0 0 .9rem; color: #FFE7E7; }
+.qui-texte p:last-child { margin-bottom: 0; }
+.qui:not(:has(.qui-photo)) { grid-template-columns: 1fr; }
+
+/* Le mot de la fin de Margot */
+.mot-fin { margin-top: 3rem; padding: clamp(1.5rem, 3vw, 2.25rem); background: var(--rose); color: var(--nuit); border-radius: 8px; }
+.mot-fin-entete { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+.mot-fin-entete img { width: 4rem; height: 4rem; border-radius: 50%; object-fit: cover; flex: none; }
+.mot-fin h2 { margin: 0; font-size: 1.5rem; font-weight: 500; }
+.mot-fin-entete span { font-size: .85rem; letter-spacing: .04em; }
+.mot-fin-texte p, .mot-fin-texte li { color: var(--nuit); }
+.mot-fin-texte > :first-child { margin-top: 0; }
+.mot-fin-texte > :last-child { margin-bottom: 0; }
+.mot-fin-texte h2, .mot-fin-texte h3 { font-size: 1.15rem; font-weight: 700; margin: 1.5rem 0 .5rem; }
+.mot-fin-texte ul, .mot-fin-texte ol { padding-left: 1.4rem; display: grid; gap: .4rem; }
+.mot-fin-texte a { color: var(--nuit); }
+.mot-fin-texte img { display: block; max-width: 100%; height: auto; margin: 1.5rem 0; border-radius: 6px; }
+
+/* Les bonnes pratiques en images */
+.bonnes-pratiques { margin-top: 3rem; }
+.bonnes-pratiques h2 { font-size: 1.5rem; font-weight: 500; margin: 0 0 1.25rem; }
+.galerie { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: 1.5rem; }
+.galerie figure { margin: 0; display: grid; gap: .6rem; align-content: start; }
+.galerie img { display: block; width: 100%; height: auto; border-radius: 6px; background: var(--nuit); }
+.galerie figcaption { font-size: .9rem; color: var(--rose-doux); }
+
+@media (max-width: 640px) {
+  .qui { grid-template-columns: 1fr; }
+  .qui-photo { max-width: 14rem; }
+}

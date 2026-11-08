@@ -85,7 +85,7 @@ content:
     filename: "{primary}.md"
     view:
       primary: title
-      fields: [title, date, brouillon]
+      fields: [title, prenom, date, brouillon]
       sort: [date, title]
       default:
         sort: date
@@ -99,40 +99,39 @@ content:
         label: "Date de publication"
         type: date
         required: true
-      - name: metier
-        label: "Qui témoigne, sans nom (ex. IBODE, 2 ans d'expérience)"
-        type: string
       - name: resume
         label: "Résumé (2 lignes affichées sur la page d'accueil)"
         type: text
         required: true
-      - name: image
-        label: "Illustration (facultative)"
+      - name: prenom
+        label: "Prénom de la personne (laissez vide pour un témoignage anonyme)"
+        type: string
+      - name: metier
+        label: "Métier et expérience (ex. IBODE, 2 ans d'expérience)"
+        type: string
+      - name: photo
+        label: "1. Photo de présentation de la personne (facultative, elle sert aussi d'image sur la page d'accueil)"
         type: image
-      - name: youtube
-        label: "Lien YouTube de la vidéo (facultatif) - copiez l'adresse de la vidéo"
-        type: string
-      - name: spotify
-        label: "Lien Spotify si le témoignage existe aussi en audio (facultatif)"
-        type: string
-      - name: duree
-        label: "Durée de la vidéo ou de l'audio, en minutes (facultatif)"
-        type: number
-      - name: situation
-        label: "La situation (laissez une ligne vide entre deux paragraphes)"
-        type: text
-      - name: deroulement
-        label: "Ce qui s'est passé"
-        type: text
-      - name: pourquoi
-        label: "Pourquoi c'est arrivé"
-        type: text
-      - name: appris
-        label: "Ce que j'en ai appris"
-        type: text
-      - name: reflexe
-        label: "Le réflexe à retenir (une ou deux phrases, dans l'encadré rose)"
-        type: text
+      - name: presentation
+        label: "2. Son expérience au bloc opératoire (premier paragraphe)"
+        type: rich-text
+      - name: body
+        label: "3. Son témoignage"
+        type: rich-text
+      - name: mot_de_la_fin
+        label: "4. Le mot de la fin : votre synthèse et vos conseils"
+        type: rich-text
+      - name: photos
+        label: "5. Photos des bonnes pratiques et recommandations (facultatif, affichées en fin d'article)"
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: "Photo"
+            type: image
+          - name: legende
+            label: "Légende (ce que montre la photo)"
+            type: string
       - name: instagram
         label: "Lien de la publication Instagram (facultatif)"
         type: string
@@ -150,7 +149,7 @@ content:
     filename: "{primary}.md"
     view:
       primary: title
-      fields: [title, metier, date, brouillon]
+      fields: [title, prenom, date, brouillon]
       sort: [date, title]
       default:
         sort: date
@@ -164,43 +163,39 @@ content:
         label: "Date de publication"
         type: date
         required: true
-      - name: prenom
-        label: "Prénom (laissez vide pour un témoignage anonyme)"
-        type: string
-      - name: metier
-        label: "Métier et expérience (ex. IBODE, 6 ans de bloc)"
-        type: string
       - name: resume
         label: "Résumé (2 lignes affichées sur la page d'accueil)"
         type: text
         required: true
-      - name: image
-        label: "Illustration (facultative)"
+      - name: prenom
+        label: "Prénom de la personne (laissez vide pour un témoignage anonyme)"
+        type: string
+      - name: metier
+        label: "Métier et expérience (ex. IBODE, 6 ans de bloc)"
+        type: string
+      - name: photo
+        label: "1. Photo de présentation de la personne (facultative, elle sert aussi d'image sur la page d'accueil)"
         type: image
-      - name: youtube
-        label: "Lien YouTube de la vidéo (facultatif) - copiez l'adresse de la vidéo"
-        type: string
-      - name: spotify
-        label: "Lien Spotify si le témoignage existe aussi en audio (facultatif)"
-        type: string
-      - name: duree
-        label: "Durée de la vidéo ou de l'audio, en minutes (facultatif)"
-        type: number
-      - name: recit
-        label: "Ce jour-là : le récit (laissez une ligne vide entre deux paragraphes)"
-        type: text
-      - name: ressenti
-        label: "Ce que j'ai ressenti"
-        type: text
-      - name: recul
-        label: "Avec le recul (pour dédramatiser)"
-        type: text
-      - name: changements
-        label: "Ce que j'ai changé depuis"
-        type: text
-      - name: conseil
-        label: "Mon conseil pour votre première fois (une ou deux phrases, dans l'encadré rose)"
-        type: text
+      - name: presentation
+        label: "2. Son expérience au bloc opératoire (premier paragraphe)"
+        type: rich-text
+      - name: body
+        label: "3. Son témoignage"
+        type: rich-text
+      - name: mot_de_la_fin
+        label: "4. Le mot de la fin : votre synthèse et vos conseils"
+        type: rich-text
+      - name: photos
+        label: "5. Photos des bonnes pratiques et recommandations (facultatif, affichées en fin d'article)"
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: "Photo"
+            type: image
+          - name: legende
+            label: "Légende (ce que montre la photo)"
+            type: string
       - name: instagram
         label: "Lien de la publication Instagram (facultatif)"
         type: string
