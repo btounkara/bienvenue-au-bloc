@@ -41,7 +41,7 @@ mot_de_la_fin: "Pour conclure, le témoignage d’Auréli nous fait prendre
   changé : vous êtes la même personne qu’avant, mais avec plus de connaissances
   théoriques et pratiques. Ne l’oubliez jamais et ne renoncez pas à toujours
   vouloir faire mieux. Les patients sont chanceux de vous avoir."
-brouillon: true
+brouillon: false
 ---
 « Mes premiers pas dans mon bloc opératoire, une fois le diplôme d’IBODE obtenu, ont été difficiles. Difficiles dans le sens où, lorsque l’on sort de l’école, on a soif de transmettre le savoir-faire et le savoir-être que l’on a acquis pendant tous ces mois à l’école. Mais l’école ne nous apprend pas à canaliser le retour dans le service où l’on travaille déjà depuis plusieurs années. Le retour dans mon bloc n’a pas été une belle expérience, car je suis revenue pleine de bonnes intentions, et notamment avec l’envie d’apprendre aux autres ce que j’avais appris et de transmettre les bonnes pratiques à mes collègues. 
 
