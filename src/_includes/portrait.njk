@@ -7,7 +7,7 @@
     <header>
       <span class="meta">Ceux qui font le bloc{% if brouillon %} <span class="badge">Brouillon</span>{% endif %}</span>
       <h1>{{ title }}</h1>
-      <p class="infos">{% if prenom %}{{ prenom }}{% endif %}{% if metier %}, {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time>{% if duree %} · {{ duree }} min{% if youtube %} de vidéo{% else %} d'écoute{% endif %}{% endif %}</p>
+      <p class="infos">{% if prenom %}{{ prenom }}{% endif %}{% if metier %}, {{ metier }}{% endif %} · <time datetime="{{ page.date | dateIso }}">{{ page.date | dateFr }}</time>{% if duree %} · {{ duree }} min{% if youtube %} de vidéo{% else %} d'écoute{% endif %}{% endif %}<span class="lectures" hidden></span></p>
     </header>
 
     {% set attente = "La vidéo ou l'audio apparaîtra ici dès que le lien YouTube ou Spotify sera ajouté." %}

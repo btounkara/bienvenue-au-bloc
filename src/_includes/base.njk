@@ -47,5 +47,28 @@
     </div>
   </footer>
   {% block scripts %}{% endblock %}
+  {%- if site.goatcounter and not montrerBrouillons %}
+  {#- Mesure d'audience GoatCounter : sans cookies, désactivée pendant l'aperçu (npm start) #}
+  <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  {%- if site.compteur_visible %}
+  <script>
+    // Nombre de lectures de l'article, affiché à la suite des infos sous le titre
+    (function () {
+      var zone = document.querySelector(".lectures");
+      if (!zone) return;
+      fetch("https://{{ site.goatcounter }}.goatcounter.com/counter/" + encodeURIComponent(location.pathname) + ".json")
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          if (!d || !d.count) return;
+          var n = String(d.count).replace(/[^0-9]/g, "");
+          if (!n || n === "0") return;
+          zone.textContent = " · " + Number(n).toLocaleString("fr-FR") + (n === "1" ? " lecture" : " lectures");
+          zone.hidden = false;
+        })
+        .catch(function () {});
+    })();
+  </script>
+  {%- endif %}
+  {%- endif %}
 </body>
 </html>

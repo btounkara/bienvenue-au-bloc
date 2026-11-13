@@ -264,3 +264,9 @@ content:
       - name: avertissement
         label: "Phrase en bas de page"
         type: text
+      - name: goatcounter
+        label: "Code GoatCounter pour compter les lecteurs (ex. bienvenueaubloc ; laissez vide pour ne rien compter)"
+        type: string
+      - name: compteur_visible
+        label: "Afficher le nombre de lectures sous le titre des articles (cochée = visible par tous)"
+        type: boolean
