@@ -41,6 +41,18 @@ content:
       - name: image
         label: "Photo ou illustration (facultative)"
         type: image
+      - name: cadrage
+        label: "Cadrage de la photo sur la page d'accueil (quelle partie de la photo garder visible)"
+        type: select
+        default: centre
+        options:
+          values:
+            - value: haut
+              label: "Haut"
+            - value: centre
+              label: "Centre"
+            - value: bas
+              label: "Bas"
       - name: youtube
         label: "Lien YouTube de la vidéo (facultatif) - copiez l'adresse de la vidéo"
         type: string
@@ -112,6 +124,18 @@ content:
       - name: photo
         label: "1. Photo de présentation de la personne (facultative, elle sert aussi d'image sur la page d'accueil)"
         type: image
+      - name: cadrage
+        label: "Cadrage de la photo sur la page d'accueil (quelle partie de la photo garder visible)"
+        type: select
+        default: centre
+        options:
+          values:
+            - value: haut
+              label: "Haut"
+            - value: centre
+              label: "Centre"
+            - value: bas
+              label: "Bas"
       - name: presentation
         label: "2. Son expérience au bloc opératoire (premier paragraphe)"
         type: rich-text
@@ -176,6 +200,18 @@ content:
       - name: photo
         label: "1. Photo de présentation de la personne (facultative, elle sert aussi d'image sur la page d'accueil)"
         type: image
+      - name: cadrage
+        label: "Cadrage de la photo sur la page d'accueil (quelle partie de la photo garder visible)"
+        type: select
+        default: centre
+        options:
+          values:
+            - value: haut
+              label: "Haut"
+            - value: centre
+              label: "Centre"
+            - value: bas
+              label: "Bas"
       - name: presentation
         label: "2. Son expérience au bloc opératoire (premier paragraphe)"
         type: rich-text

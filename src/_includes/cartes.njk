@@ -15,7 +15,7 @@
     {%- set video = p.data.youtube | idYoutube %}
     <div class="illus{% if p.data.image or p.data.photo or video %} photo{% endif %}">
       {%- if p.data.image or p.data.photo %}
-      <img src="{{ p.data.image or p.data.photo }}" alt="" loading="lazy">
+      <img src="{{ p.data.image or p.data.photo }}" alt="" loading="lazy"{% if p.data.cadrage in ["haut", "bas"] %} class="cadrage-{{ p.data.cadrage }}"{% endif %}>
       {%- elif video %}
       <img src="https://i.ytimg.com/vi/{{ video }}/hqdefault.jpg" alt="" loading="lazy">
       {%- else %}

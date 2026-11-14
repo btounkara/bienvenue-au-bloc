@@ -6,6 +6,7 @@ resume: "Voici Auréli qui nous partage le retour dans son service après avoir
 prenom: Auréli
 metier: Au bloc opératoire depuis 14 ans, IBODE depuis 7 ans.
 photo: /images/publications/IMG-20261108-WA0008(1).jpg
+cadrage: haut
 presentation: >-
   Auréli est arrivée au bloc opératoire en septembre 2012 après plusieurs années
   en tant qu’IDE en service de chirurgie. Elle a intégré un bloc

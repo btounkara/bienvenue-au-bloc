@@ -16,7 +16,7 @@
     {% if photo or (presentation | texteBrut) %}
     <section class="qui" aria-label="Qui témoigne">
       {% if photo %}
-      <figure class="qui-photo"><img src="{{ photo }}" alt="{% if prenom %}{{ prenom }}{% else %}La personne qui témoigne{% endif %}"></figure>
+      <figure class="qui-photo"><img src="{{ photo }}"{% if cadrage in ["haut", "bas"] %} class="cadrage-{{ cadrage }}"{% endif %} alt="{% if prenom %}{{ prenom }}{% else %}La personne qui témoigne{% endif %}"></figure>
       {% endif %}
       <div class="qui-texte">
         <span class="qui-titre">{% if prenom %}{{ prenom }}{% else %}Qui témoigne ?{% endif %}{% if metier %}<em>{{ metier }}</em>{% endif %}</span>
