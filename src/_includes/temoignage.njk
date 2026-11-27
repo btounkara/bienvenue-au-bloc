@@ -20,7 +20,7 @@
       {% endif %}
       <div class="qui-texte">
         <span class="qui-titre">{% if prenom %}{{ prenom }}{% else %}Qui témoigne ?{% endif %}{% if metier %}<em>{{ metier }}</em>{% endif %}</span>
-        {{ presentation | safe }}
+        {{ presentation | markdown | safe }}
       </div>
     </section>
     {% endif %}
@@ -47,7 +47,7 @@
           <span>par {{ site.signature }}, IBODE</span>
         </div>
       </div>
-      <div class="mot-fin-texte">{{ mot_de_la_fin | safe }}</div>
+      <div class="mot-fin-texte">{{ mot_de_la_fin | markdown | safe }}</div>
     </section>
     {% endif %}
 

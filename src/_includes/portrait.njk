@@ -20,7 +20,7 @@
 
       {% if introduction | texteBrut %}
       <div class="introduction">
-        {{ introduction | safe }}
+        {{ introduction | markdown | safe }}
       </div>
       {% endif %}
 

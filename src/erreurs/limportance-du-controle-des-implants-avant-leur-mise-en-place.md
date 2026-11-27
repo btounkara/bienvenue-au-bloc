@@ -17,7 +17,10 @@ presentation: >-
   IBODE pourtant d’expérience, nous offre comme témoignage pour notre série « Si
   c’était à refaire ». Un témoignage plein d’humilité sur la faute, sa
   dénonciation et l’acceptation de ses conséquences auprès du patient mais aussi
-  des équipes.  Merci à elle pour son témoignage qui parlera sûrement à
+  des équipes.
+
+
+  Merci à elle pour son témoignage qui parlera sûrement à
   plusieurs d’entre nous et qui met en lumière l’importance de la communication
   et du contrôle malgré la confiance au bloc opératoire. Le récit de cetette
   situation à pour but de faire réfléchir sur nos pratiques afin de s’améliorer
@@ -27,12 +30,18 @@ presentation: >-
   Katia est infirmière au bloc opératoire depuis 2014, l’année où elle est
   sortie de l’IFSI. Elle s’est ensuite orientée vers l’Institut de Formation des
   Infirmiers de Bloc Opératoire en 2018 où elle obtient son diplôme d’IBODE en
-  Mars 2020. Depuis, Katia s’est formée dans une bonne partie des disciplines
+  Mars 2020.
+
+
+  Depuis, Katia s’est formée dans une bonne partie des disciplines
   chirurgicales : orthopédie, chirurgie cardiaque, neurochirurgie, urologie,
   chirurgie digestive, chirurgie thoracique, vasculaire, robotique (diplôme
   d’assistante chirurgie en 2021, coordinatrice en 2023, DIU en 2024) et a
   travaillé dans tous les secteurs public, privé, ESPIC et aide opératoire pour
-  des chirurgiens privés. Très investie dans la promotion du métier d’IBODE et
+  des chirurgiens privés.
+
+
+  Très investie dans la promotion du métier d’IBODE et
   le tutorat (formation diplômante en 2022), elle crée en 2017 un site internet
   d’aide à la formation des personnels de bloc opératoire
   ([www.monblocoperatoire.com](http://www.monblocoperatoire.com)) pour faciliter
@@ -44,9 +53,15 @@ presentation: >-
   de Perfectionnement. Elle est intervenante régulière dans des IFSI et dans
   différents IFIBODE, promeut la profession IBODE auprès des lycéennes et auprès
   de plusieurs associations dédiées (Télémaque, Sciences For Girls) dans le but
-  créer des vocations. Responsable tutorat, elle monte plusieurs projets de
+  créer des vocations.
+
+
+  Responsable tutorat, elle monte plusieurs projets de
   formation dans les différents blocs pour lesquels elle travaille (parcours de
-  formation, livret de bonnes pratiques,etc…). Investie dans la recherche, elle
+  formation, livret de bonnes pratiques,etc…).
+
+
+  Investie dans la recherche, elle
   écrit pour la première fois en 2021 dans la revue de l’UNAIBODE « Zoom sur
   l’instrumentation » qui pose les règles de bonnes pratiques sur
   l’instrumentation avant de publier son premier article scientifique

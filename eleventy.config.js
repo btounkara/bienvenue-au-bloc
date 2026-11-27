@@ -1,4 +1,5 @@
 import { HtmlBasePlugin } from "@11ty/eleventy";
+import markdownIt from "markdown-it";
 
 // En aperçu sur l'ordinateur (npm start), les brouillons sont visibles ; jamais sur le site en ligne.
 const montrerBrouillons = process.env.ELEVENTY_RUN_MODE === "serve";
@@ -49,6 +50,11 @@ export default function (eleventyConfig) {
       .map((p) => `<p>${echapper(p).replace(/\n/g, "<br>")}</p>`)
       .join("\n")
   );
+
+  // Champs « texte mis en forme » de Pages CMS : ils sont enregistrés en Markdown
+  // (listes à tirets, gras, liens, paragraphes) -> HTML. Le HTML déjà présent est conservé.
+  const md = markdownIt({ html: true, linkify: true, breaks: false });
+  eleventyConfig.addFilter("markdown", (t = "") => (t ? md.render(String(t)) : ""));
 
   eleventyConfig.addFilter("texteBrut", (html = "") =>
     String(html).replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim()

@@ -117,7 +117,7 @@ permalink: /
     </figure>
     <div>
       <h2>{{ site.presentation_titre }}</h2>
-      <div class="presentation">{{ site.presentation | safe }}</div>
+      <div class="presentation">{{ site.presentation | markdown | safe }}</div>
     </div>
   </div>
 </section>
