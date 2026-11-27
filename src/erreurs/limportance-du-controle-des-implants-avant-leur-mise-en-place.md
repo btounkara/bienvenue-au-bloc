@@ -62,7 +62,6 @@ mot_de_la_fin: >-
   prise en charge du patient, c’est un des maillons de la chaîne de sécurité de
   la prise en charge du patient au bloc opératoire. 
 
-
   - La rigueur que le rôle de circulant implique : indépendamment de la
   situation de Katia, j’ai pu constater à plusieurs reprises que ce rôle est
   parfois négligé, dénigré ou considéré comme simple. Je ne suis absolument pas
@@ -71,7 +70,6 @@ mot_de_la_fin: >-
   les temps opératoires, permet de faire le lien entre le stérile et le non
   stérile. Il est le maillon le plus important dans une salle d’intervention qui
   doit toujours avoir deux temps d’avance sur ce qui se passe. 
-
 
   - Je partage l’avis de Katia sur la confiance au sein de l’équipe : beaucoup
   d’entre vous ont très certainement entendu l’adage « La confiance n'exclut pas
@@ -89,13 +87,13 @@ mot_de_la_fin: >-
   ça n’arrive qu’aux autres et d’éviter de reproduire ces situations. La rigueur
   est de mise accompagnée de bonne humeur et de connaissances. Ayez toujours
   envie d’apprendre et de partager avec vos collègues.
-brouillon: true
+brouillon: false
 ---
 « Ça faisait 4 ans que j'étais au bloc de chirurgie orthopédique, mon premier poste. C'était dans mes dernières semaines avant d'intégrer l'école d'IBODE. Je me rappelle bien ce jour, un vendredi soir, nous nous apprêtions à réaliser la dernière chirurgie de la journée, autour de 18 h 30. Une chirurgie simple, courante, une prothèse de genou droite avec une équipe où tout le monde s'entendait bien, avait l'habitude de travailler ensemble et aimait travailler ensemble. L’ambiance était bonne, conviviale, tout le monde était détendu. Lors de cette intervention, j’avais le rôle de circulante. 
 
 Au moment de donner les implants, je les fais vérifier, c’est-à-dire que je présente les boites d’implants pour une deuxième lecture, comme le veulent les bonnes pratiques que l’on m’avait enseignée. Mon collègue chirurgien regarde la boîte et confirme que c’est le bon implant, que je peux l’ouvrir et le distribuer. Je les distribue donc tous. Pendant qu’ils commencent à cimenter les implants, j'effectue la traçabilité dans le dossier médical et sur les feuilles de commandes pharmacie. C’est alors qu’en collant l'étiquette je la relis et vois écrit "Fémur Gauche". Je fouille immédiatement la poubelle pour retrouver le contenant et m’aperçois qu’il y a bien écrit fémur gauche dessus. Sans attendre, je le signale à l’équipe sur le champ opératoire. Le temps a semblé comme suspendu, le silence s’est fait instantanément, tout le monde a regardé vers le genou du patient : le fémur était posé, le ciment presque sec. Après réflexion et questionnement de l’ensemble de l’équipe, le chirurgien a décidé de laisser l’implant en place. La chance voulait que nous ayons posé une très grosse taille et qu’on observait peu de latéralité différente sur les implants de grosse taille de cette gamme de prothèse. Après plusieurs tests de stabilité, nous avons donc laissé les implants en place et terminé l’intervention.
 
-J'ai tracé l’incident dans le dossier du patient et dans la check-list « sécurité du patent au bloc opératoire ». Je me suis sentie au plus mal et honteuse de mon erreur. J'en ai beaucoup pleuré en rentrant chez moi et même maintenant, alors que ça fait 10 ans j'y pense de temps en temps. J'ai refait le chemin des milliers de fois pour comprendre comment j’avais pu me tromper sur l’implant. J’ai récupéré le fémur par habitude sur l'étagère sans vraiment regarder le côté car les boîtes étaient rangées sur des étagères différentes pour les implants gauches et droit. Je savais que les implants étaient vérifiés tous les midi, je n’ai pas pensé une seule seconde qu’il aurait pu y avoir une erreur dans le rangement. Sauf que là oui. Je pense que le chirurgien n'a pas vraiment lu non plus car il nous faisait confiance, et mon collègue circulant n’a pas trouvé nécessaire de relire derrière le chirurgien. Nous nous sommes fait confiance les uns les autres et avons manqué de rigueur alors que l’erreur aurait pû et aurait dû être rattrapée. J'ai demandé des nouvelles du patient pendant des semaines pour suive son évolution. »
+J'ai tracé l’incident dans le dossier du patient et dans la check-list « sécurité du patent au bloc opératoire ». Je me suis sentie au plus mal et honteuse de mon erreur. J'en ai beaucoup pleuré en rentrant chez moi et même maintenant, alors que ça fait 10 ans j'y pense de temps en temps. J'ai refait le chemin des milliers de fois pour comprendre comment j’avais pu me tromper sur l’implant. J’ai récupéré le fémur par habitude sur l'étagère sans vraiment regarder le côté car les boîtes étaient rangées sur des étagères différentes pour les implants gauches et droit. Je savais que les implants étaient vérifiés tous les midi, je n’ai pas pensé une seule seconde qu’il aurait pu y avoir une erreur dans le rangement. Sauf que là oui. Je pense que le chirurgien n'a pas vraiment lu non plus car il nous faisait confiance, et mon collègue instrumentiste n’a pas trouvé nécessaire de relire derrière le chirurgien. Nous nous sommes fait confiance les uns les autres et avons manqué de rigueur alors que l’erreur aurait pû et aurait dû être rattrapée. J'ai demandé des nouvelles du patient pendant des semaines pour suive son évolution. Le chirurgien m'a rassuré en m'informant que le patient se porte très bien et aucun problème ave sa prothèse n'a été remonté.»
 
 **Face à cela, comment as-tu adapté ta pratique ?**
 
