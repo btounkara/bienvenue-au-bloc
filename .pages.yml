@@ -62,6 +62,9 @@ content:
       - name: duree
         label: "Durée de la vidéo ou de l'audio, en minutes"
         type: number
+      - name: introduction
+        label: "Introduction (quelques lignes pour présenter l'épisode, affichées avant la présentation de la personne)"
+        type: rich-text
       - name: body
         label: "Présentation de la personne (son parcours en quelques lignes)"
         type: rich-text

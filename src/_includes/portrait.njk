@@ -18,6 +18,12 @@
       <figure class="couverture"><img src="{{ image }}" alt="{% if prenom %}{{ prenom }}{% endif %}"></figure>
       {% endif %}
 
+      {% if introduction | texteBrut %}
+      <div class="introduction">
+        {{ introduction | safe }}
+      </div>
+      {% endif %}
+
       {% if content | texteBrut %}
       <h2>{% if prenom %}{{ prenom }} en quelques mots{% else %}Son parcours{% endif %}</h2>
       {{ content | safe }}
