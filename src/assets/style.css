@@ -285,3 +285,8 @@ img.cadrage-bas { object-position: 50% 85%; }
   .qui { grid-template-columns: 1fr; }
   .qui-photo { max-width: 14rem; }
 }
+
+[hidden] { display: none !important; } /* un élément masqué par le filtre reste masqué, quel que soit son style */
+
+/* Texte des articles justifié (avec césure pour éviter les grands blancs entre les mots) */
+.texte p, .texte li, .qui-texte p, .mot-fin-texte p, .mot-fin-texte li { text-align: justify; hyphens: auto; }

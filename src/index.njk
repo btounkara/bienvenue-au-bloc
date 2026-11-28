@@ -22,7 +22,6 @@ permalink: /
 {% block principal %}
 {% set total = collections.publications.length %}
 <section id="publications">
-  <span id="portraits" class="ancre"></span><span id="refaire" class="ancre"></span><span id="premiere-fois" class="ancre"></span>
   <div class="enveloppe">
     <div class="rubriques">
       <a class="rubrique" href="#portraits" data-filtre="Ceux qui font le bloc">
@@ -42,6 +41,7 @@ permalink: /
       </a>
     </div>
 
+    <span id="portraits" class="ancre"></span><span id="refaire" class="ancre"></span><span id="premiere-fois" class="ancre"></span>
     <div class="titre-section">
       <h2>Dernières publications</h2>
       <p id="compteur">{{ total }} publication{% if total > 1 %}s{% endif %}</p>

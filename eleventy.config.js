@@ -54,6 +54,18 @@ export default function (eleventyConfig) {
   // Champs « texte mis en forme » de Pages CMS : ils sont enregistrés en Markdown
   // (listes à tirets, gras, liens, paragraphes) -> HTML. Le HTML déjà présent est conservé.
   const md = markdownIt({ html: true, linkify: true, breaks: false });
+  // Les liens vers d'autres sites s'ouvrent dans un nouvel onglet : le lecteur reste sur le blog
+  const ouvrirLien = md.renderer.rules.link_open || ((tokens, i, options, env, self) => self.renderToken(tokens, i, options));
+  md.renderer.rules.link_open = (tokens, i, options, env, self) => {
+    const lien = tokens[i];
+    if (/^(https?:)?\/\//i.test(lien.attrGet("href") || "")) {
+      lien.attrSet("target", "_blank");
+      lien.attrSet("rel", "noopener");
+    }
+    return ouvrirLien(tokens, i, options, env, self);
+  };
+  // Même rendu pour le corps des articles (fichiers .md) que pour les champs mis en forme
+  eleventyConfig.setLibrary("md", md);
   eleventyConfig.addFilter("markdown", (t = "") => (t ? md.render(String(t)) : ""));
 
   eleventyConfig.addFilter("texteBrut", (html = "") =>
