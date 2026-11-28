@@ -92,10 +92,10 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 .carte p { margin: 0; font-size: .95rem; color: var(--rose-doux); }
 .carte .duree { font-size: .8rem; color: var(--rose-doux); }
 .carte > a:hover h3 { color: var(--corail); }
-.carte.une { grid-column: 1 / -1; }
-.carte.une > a { display: grid; grid-template-columns: 1fr 1fr; }
-.carte.une .illus { aspect-ratio: auto; min-height: 16rem; }
-.carte.une h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+.carte { grid-column: 1 / -1; } /* toutes les publications en grand format, sur toute la largeur */
+.carte > a { display: grid; grid-template-columns: 1fr 1fr; }
+.carte .illus { aspect-ratio: auto; min-height: 16rem; }
+.carte h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
 .vide { color: var(--rose-doux); }
 
 /* À propos */
@@ -134,8 +134,8 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 
 @media (max-width: 760px) {
   .accroche-texte { grid-template-columns: 1fr; }
-  .carte.une > a { display: flex; }
-  .carte.une .illus { min-height: 0; aspect-ratio: 16 / 10; }
+  .carte > a { display: flex; }
+  .carte .illus { min-height: 0; aspect-ratio: 16 / 10; }
   .apropos .enveloppe { grid-template-columns: 1fr; }
   .entete::before { clip-path: polygon(55% 0, 100% 0, 100% 45%); }
 }
